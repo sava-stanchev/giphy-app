@@ -2,15 +2,15 @@ import { renderFavoriteStatus } from "../events/helpers";
 
 export const toGiphySimple = (GIF) =>`
   <div class="giphy-simple">
-    <a class="wrapper" href=${GIF.user.profile_url}>
+    <div class="wrapper">
       ${renderFavoriteStatus(GIF.id) /**should have class favorite!!!!!! */} 
       <img class="giphy-image" src=${GIF.images.original.url}>
       <div class="user-info">
         <div class=avatar-holder>
           <img class="avatar" src=${GIF.user.avatar_url} alt="UA">
         </div>
-        <div class="username">${GIF.username}</div>
+        <a class="username" href=${GIF.user.profile_url}>${GIF.username}</a>
       </div>
-    </a>
+    </div>
   </div>
 `;
