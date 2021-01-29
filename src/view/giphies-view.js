@@ -1,4 +1,4 @@
-// import { renderFavoriteStatus } from ...
+import { renderFavoriteStatus } from "../events/helpers";
 
 export const toGiphySimple = (GIF) =>`
   <div class="giphy-simple">
