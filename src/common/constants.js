@@ -15,3 +15,6 @@ export const EMPTY_HEART = '♡';
 export const q = (selector) => document.querySelector(selector);
 
 export const qs = (selector) => document.querySelectorAll(selector);
+
+export const API_URL = `https://api.giphy.com/v1/gifs`;
+
