@@ -1,0 +1,51 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/* Navigation styles */
+
+
+/* Giphy simple view */
+
+.giphy-simple {
+  width: 250px;
+  display: inline-block;
+}
+
+.giphy-simple .wrapper{
+  position: relative;
+  display: inline-block;
+  height: 100%;
+}
+
+.giphy-simple .favorite {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+}
+
+.giphy-image {
+  width: 100%;
+}
+
+.user-info{
+  bottom: 10px;
+  position: absolute;
+  height: 50px;
+  line-height: 50px;
+  vertical-align: middle;
+}
+
+.user-info .avatar {
+  width: 40px;
+  height: 40px;
+}
+
+.user-info .username, .user-info .avatar-holder {
+  display: inline-block;
+  margin-left: 5px;
+  height: 40px;
+  line-height: 40px;
+  vertical-align: middle;
+}
