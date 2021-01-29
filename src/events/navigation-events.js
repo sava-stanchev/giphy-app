@@ -5,7 +5,7 @@ import { toTrendingView } from "../view/trending-view.js";
 
 const renderTrending = () => {
   loadTrendingGIFs()
-  .then(res => {
+  .then(res => {    
     q(CONTAINER_SELECTOR).innerHTML = toTrendingView(res.data);
   });
 };
