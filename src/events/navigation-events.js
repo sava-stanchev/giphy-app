@@ -2,6 +2,7 @@ import { HOME, TRENDING, q, FAVORITES } from "../common/constants.js";
 import { loadSingleGIF, loadTrendingGIFs } from "../requests/request-service.js";
 import { toGiphySimple, toSingleGifView } from "../view/giphies-view.js";
 import { toTrendingView } from "../view/trending-view.js";
+import { setActiveNav } from "./helpers.js";
 
 export const loadPage = (page = '') => {
 
