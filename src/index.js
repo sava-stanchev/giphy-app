@@ -1,6 +1,7 @@
 import { renderSearchItems } from './events/search-events.js';
 import { toggleFavoriteStatus } from './events/favorites-events.js';
-import { renderGIFDetails } from './events/navigation-events.js';
+import { loadPage, renderGIFDetails } from './events/navigation-events.js';
+import { q, HOME } from './common/constants.js';
 
 document.addEventListener('DOMContentLoaded', () => {
 
