@@ -26,6 +26,10 @@ export const loadPage = (page = '') => {
     case UPLOAD:
       setActiveNav(UPLOAD)
       return renderUpload();
+      
+    case ABOUT:
+      setActiveNav(ABOUT)
+      return renderAbout();
 
   }
 }
