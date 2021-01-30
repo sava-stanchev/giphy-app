@@ -13,5 +13,5 @@ const renderTrending = () => {
 export const renderGIFDetails = (gifId = null) => {
   loadSingleGIF(gifId)
     .then(res => 
-      q(CONTAINER_SELECTOR).innerHTML = toSingleGifView(res));
+      q(CONTAINER_SELECTOR).innerHTML = toSingleGifView(res.data));
 };
