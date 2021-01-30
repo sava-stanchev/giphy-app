@@ -2,7 +2,13 @@ export const API_KEY = 'n5zxeZCOVFKxLKHtZJihFzK4vpLvq5XJ';
 
 export const HOME = 'home';
 
+export const TRENDING = 'trending';
+
 export const FAVORITES = 'favorites';
+
+export const UPLOADED = 'uploaded';
+
+export const UPLOAD = 'upload';
 
 export const ABOUT = 'about';
 

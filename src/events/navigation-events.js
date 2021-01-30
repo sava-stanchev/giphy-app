@@ -1,9 +1,36 @@
-import { q } from "../common/constants.js";
+import { HOME, TRENDING, q, FAVORITES } from "../common/constants.js";
 import { loadSingleGIF, loadTrendingGIFs } from "../requests/request-service.js";
 import { toGiphySimple, toSingleGifView } from "../view/giphies-view.js";
 import { toTrendingView } from "../view/trending-view.js";
 
-const renderTrending = () => {
+export const loadPage = (page = '') => {
+
+  switch (page) {
+
+    case HOME:
+      setActiveNav(HOME);
+      return renderHome();
+
+    case TRENDING:
+      setActiveNav(TRENDING)
+      return renderTrending();
+
+    case FAVORITES:
+      setActiveNav(FAVORITES)
+      return renderFavorites();
+
+    case UPLOADED:
+      setActiveNav(UPLOADED)
+      return renderUploaded();
+
+    case UPLOAD:
+      setActiveNav(UPLOAD)
+      return renderUpload();
+
+  }
+}
+
+export const renderTrending = () => {
   loadTrendingGIFs()
   .then(res => {    
     q(CONTAINER_SELECTOR).innerHTML = toTrendingView(res.data);
