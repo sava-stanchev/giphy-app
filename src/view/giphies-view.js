@@ -1,7 +1,7 @@
 import { renderFavoriteStatus } from "../events/helpers";
 
 export const toGiphySimple = (GIF) =>`
-  <div class="giphy-simple" data-giphy-id=${GIF.id}>
+  <div class="giphy-simple" data-gif-id=${GIF.id}>
     <div class="wrapper">
       ${renderFavoriteStatus(GIF.id) /**should have class favorite!!!!!! */} 
       <img class="giphy-image" src=${GIF.images.original.url}>

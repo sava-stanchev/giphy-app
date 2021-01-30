@@ -5,8 +5,12 @@ import { renderGIFDetails } from './events/navigation-events.js';
 document.addEventListener('DOMContentLoaded', () => {
 
     document.addEventListener('click', e => {
-        
-        if (e.target.classList.contains('')) {
+
+        if (e.target.classList.contains('nav-link')) {
+            loadPage(e.target.getAttribute('data-page'));
+        }
+
+        if (e.target.classList.contains('giphy-image')) {
             renderGIFDetails(e.target.getAttribute('data-gif-id'));
         }
 
@@ -14,13 +18,12 @@ document.addEventListener('DOMContentLoaded', () => {
             toggleFavoriteStatus(e.target.getAttribute('data-gif-id'));
         }
 
-  
     });
-  
+
     q('input#search').addEventListener('input', e => {
-      renderSearchItems(e.target.value);
+        renderSearchItems(e.target.value);
     });
-  
+
     loadPage(HOME);
-  
-  });
+
+});
