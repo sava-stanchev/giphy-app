@@ -7,6 +7,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     document.addEventListener('click', e => {
 
+      e.preventDefault();
+
         if (e.target.classList.contains('nav-link')) {
             loadPage(e.target.getAttribute('data-page'));
         }
@@ -21,9 +23,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     });
 
-    q('input#search').addEventListener('input', e => {
-        renderSearchItems(e.target.value);
-    });
+    // q('input#search').addEventListener('input', e => {
+    //     renderSearchItems(e.target.value);
+    // });
 
     loadPage(HOME);
 

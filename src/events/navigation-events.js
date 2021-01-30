@@ -1,16 +1,17 @@
-import { HOME, TRENDING, q, FAVORITES } from "../common/constants.js";
+import { HOME, TRENDING, q, FAVORITES, CONTAINER_SELECTOR } from "../common/constants.js";
 import { loadSingleGIF, loadTrendingGIFs } from "../requests/request-service.js";
 import { toGiphySimple, toSingleGifView } from "../view/giphies-view.js";
 import { toTrendingView } from "../view/trending-view.js";
 import { setActiveNav } from "./helpers.js";
 
+
 export const loadPage = (page = '') => {
 
   switch (page) {
 
-    case HOME:
-      setActiveNav(HOME);
-      return renderHome();
+    // case HOME:
+    //   setActiveNav(HOME);
+    //   return renderHome();
 
     case TRENDING:
       setActiveNav(TRENDING)
@@ -20,17 +21,17 @@ export const loadPage = (page = '') => {
       setActiveNav(FAVORITES)
       return renderFavorites();
 
-    case UPLOADED:
-      setActiveNav(UPLOADED)
-      return renderUploaded();
+    // case UPLOADED:
+    //   setActiveNav(UPLOADED)
+    //   return renderUploaded();
 
-    case UPLOAD:
-      setActiveNav(UPLOAD)
-      return renderUpload();
+    // case UPLOAD:
+    //   setActiveNav(UPLOAD)
+    //   return renderUpload();
       
-    case ABOUT:
-      setActiveNav(ABOUT)
-      return renderAbout();
+    // case ABOUT:
+    //   setActiveNav(ABOUT)
+    //   return renderAbout();
 
   }
 }

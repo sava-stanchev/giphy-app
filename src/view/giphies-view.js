@@ -1,19 +1,19 @@
 import { renderFavoriteStatus } from "../events/helpers.js";
 
-export const toGiphySimple = (GIF) =>`
-  <div class="giphy-simple" data-gif-id=${GIF.id}>
+export const toGiphySimple = (GIF) => `
+<div class="giphy-simple" data-gif-id=${GIF.id}>
     <div class="wrapper">
-      ${renderFavoriteStatus(GIF.id) /**should have class favorite!!!!!! */} 
+      ${renderFavoriteStatus(GIF.id)} 
       <img class="giphy-image" src=${GIF.images.original.url}>
-      <div class="user-info">
-        <div class=avatar-holder>
-          <img class="avatar" src=${GIF.user.avatar_url} alt="UA">
-        </div>
-        <a class="username" href=${GIF.user.profile_url}>${GIF.username}</a>
-      </div>
     </div>
   </div>
-`;
+  `;
+  //     <div class="user-info">
+  //       <div class=avatar-holder>``
+  //         <img class="avatar" src=${GIF.user.avatar_url} alt="UA">
+  //       </div>
+  //       <a class="username" href=${GIF.user.profile_url}>${GIF.username}</a>
+  //     </div>
 
 export const toSingleGifView = (GIF) => {
   `<div id="single-gif">
