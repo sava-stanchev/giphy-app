@@ -5,3 +5,15 @@ export const loadTrendingGIFs = () => {
   return fetch(`${API_URL}/trending?api_key=${API_KEY}&limit=25&rating=g`)
     .then(res => res.json());
 };
+
+export const loadSingleGIF = (gifId) => {
+
+  return fetch(`${API_URL}/${gifId}?api_key=${API_KEY}`)
+    .then(response => response.json()); 
+};
+
+export const loadSearchGifs = (searchTerm = '') => {
+
+  return fetch(`${API_URL}/search?api_key=${API_KEY}&limit=10&q=${searchTerm}`)
+    .then(response => response.json());
+};
