@@ -1,6 +1,7 @@
 import { HOME, TRENDING, q, FAVORITES, CONTAINER_SELECTOR } from "../common/constants.js";
 import { loadSingleGIF, loadTrendingGIFs } from "../requests/request-service.js";
 import { toGiphySimple, toSingleGifView } from "../view/giphies-view.js";
+import { toHomeView } from "../view/home-view.js";
 import { toTrendingView } from "../view/trending-view.js";
 import { setActiveNav } from "./helpers.js";
 
@@ -9,9 +10,9 @@ export const loadPage = (page = '') => {
 
   switch (page) {
 
-    // case HOME:
-    //   setActiveNav(HOME);
-    //   return renderHome();
+    case HOME:
+      setActiveNav(HOME);
+      return renderHome();
 
     case TRENDING:
       setActiveNav(TRENDING)
@@ -35,6 +36,10 @@ export const loadPage = (page = '') => {
 
   }
 }
+
+export const renderHome = () => {
+  q(CONTAINER_SELECTOR).innerHTML = toHomeView();
+};
 
 export const renderTrending = () => {
   loadTrendingGIFs()

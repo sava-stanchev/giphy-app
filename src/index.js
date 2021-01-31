@@ -9,7 +9,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
       e.preventDefault();
 
-        if (e.target.classList.contains('nav-link')) {
+        if (e.target.classList.contains('nav-link') 
+        || e.target.classList.contains('navbar-brand')) {
             loadPage(e.target.getAttribute('data-page'));
         }
 
