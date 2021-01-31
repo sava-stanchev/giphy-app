@@ -4,7 +4,7 @@ export const toGiphySimple = (GIF) => `
 <a href="#" class="giphy-simple" >
     <div class="wrapper">
       ${renderFavoriteStatus(GIF.id)} 
-      <img class="giphy-image" data-gif-id=${GIF.id} src=${GIF.images.original.url}>
+      <img class="giphy-image" data-gif-id=${GIF.id} src=${GIF.images.fixed_width.url}>
     </div>
   </a>
   `;
