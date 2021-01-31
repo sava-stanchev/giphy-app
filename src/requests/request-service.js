@@ -14,6 +14,6 @@ export const loadSingleGIF = (gifId) => {
 
 export const loadSearchGifs = (searchTerm = '') => {
 
-  return fetch(`${API_URL}/search?api_key=${API_KEY}&q=${searchTerm}&limit=10`)
+  return fetch(`${API_URL}/search?api_key=${API_KEY}&q=${searchTerm}&limit=12`)
     .then(response => response.json());
 };
