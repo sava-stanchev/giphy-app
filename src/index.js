@@ -23,9 +23,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
     });
 
-    // q('input#search').addEventListener('input', e => {
-    //     renderSearchItems(e.target.value);
-    // });
+    document.getElementById('btnSearch').addEventListener('click', e => {
+        e.preventDefault();
+        const input = document.getElementById('search').value;
+        renderSearchItems(input);
+    });
 
     loadPage(HOME);
 
