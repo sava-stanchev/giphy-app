@@ -9,16 +9,17 @@ body {
   overflow: hidden;
 }
 
+footer {
+  position: fixed;
+  bottom: 0;
+}
+
 #container h1 {
   position: absolute;
   top: 100px;
   left: 320px;
   color:#ffffff;
   
-}
-
-#container #GIFs {
-
 }
 
 .content {
@@ -58,6 +59,10 @@ scrollbar-width: none;  /* Firefox */
 /* Navigation styles */
 .bg-dark {
   background-color: #000000!important;
+}
+
+.nav-link.active {
+  color: #01ff0e!important;
 }
 
 /* Giphy simple view */
