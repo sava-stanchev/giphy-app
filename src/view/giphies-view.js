@@ -13,7 +13,7 @@ export const toGiphySimple = (GIF) => `
 export const toSingleGifView = (GIF) => `
 <div id="single-gif">
   <h1>${GIF.title}</h1>
-  <div class="single-gif-content">
+  <div class="single-gif-content content">
     ${toGifDetailed(GIF)}
   </div>
 </div>`;
@@ -25,10 +25,10 @@ const toGifDetailed = (GIF) =>  `
     <img src="${GIF.images.original.url}">
   </div>
   <div class="gif-info">
-    <p>Username: ${GIF.username}</p>
-    <p>Uploaded: ${GIF.import_datetime.substring(0, 10)}</p>
-    <p>Dimensions: ${GIF.images.downsized_large.width} x 
+    <div class="col"><p>Username: ${GIF.username || 'unknown'}</p>
+    <p>Uploaded: ${GIF.import_datetime.substring(0, 10)}</p></div>
+    <div class="col"><p>Dimensions: ${GIF.images.downsized_large.width} x 
     ${GIF.images.downsized_large.height} px</p>
-    <p>Rating: ${GIF.rating.toUpperCase()}</p>
+    <p>Rating: ${GIF.rating.toUpperCase()}</p></div>
   </div>
 </div>`;

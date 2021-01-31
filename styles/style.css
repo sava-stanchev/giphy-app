@@ -121,3 +121,25 @@ scrollbar-width: none;  /* Firefox */
   line-height: 40px;
   vertical-align: middle;
 }
+
+
+
+.single-gif-content {
+  padding-top: 50px;
+  max-width: 600px;
+}
+
+.gif-info {
+  display: flex;
+}
+
+.col {
+  flex: 50%;
+}
+.col>p {
+  color: #CE2536;
+  margin: 0px;
+  text-align: left;
+  padding-left: 60px;
+  padding-right: 0px;
+}
