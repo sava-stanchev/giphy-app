@@ -20,3 +20,15 @@ export const renderFavoriteStatus = (gifId) => {
       ? `<span class="favorite active" data-gif-id="${gifId}">${FULL_HEART}</span>`
       : `<span class="favorite" data-gif-id="${gifId}">${EMPTY_HEART}</span>`;
 };
+
+// export const renderUserInfo = (GIF) => {
+
+//   return GIF.hasOwnProperty('user')
+//     ? `<div class=avatar-holder>
+//         <img class="avatar" src=${GIF.user.avatar_url} alt="UA">
+//       </div>
+//       <a class="username" href=${GIF.user.profile_url}>${GIF.username}</a>`
+//     : `<div class=avatar-holder>
+//       </div>
+//       <a class="username" href="#">${GIF.username}</a>`;
+// }

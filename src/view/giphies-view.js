@@ -2,18 +2,13 @@ import { renderFavoriteStatus } from "../events/helpers.js";
 
 export const toGiphySimple = (GIF) => `
 <a href="#" class="giphy-simple" >
-    <div class="wrapper">
-      ${renderFavoriteStatus(GIF.id)} 
-      <img class="giphy-image" data-gif-id=${GIF.id} src=${GIF.images.fixed_width.url}>
-    </div>
-  </a>
-  `;
-  //     <div class="user-info">
-  //       <div class=avatar-holder>``
-  //         <img class="avatar" src=${GIF.user.avatar_url} alt="UA">
-  //       </div>
-  //       <a class="username" href=${GIF.user.profile_url}>${GIF.username}</a>
-  //     </div>
+  <div class="wrapper">
+    ${renderFavoriteStatus(GIF.id)} 
+    <img class="giphy-image" data-gif-id=${GIF.id} src=${GIF.images.fixed_width.url}>
+    <div class="user-info"></div>
+  </div>
+</a>
+`;
 
 export const toSingleGifView = (GIF) => `
 <div id="single-gif">
