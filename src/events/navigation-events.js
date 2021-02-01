@@ -30,7 +30,7 @@ export const loadPage = (page = '') => {
     case UPLOAD:
       setActiveNav(UPLOAD)
       return renderUpload();
-      
+
     // case ABOUT:
     //   setActiveNav(ABOUT)
     //   return renderAbout();
@@ -43,15 +43,15 @@ export const renderHome = () => {
 };
 
 export const renderTrending = async () => {
-  const tendingGifs = await loadTrendingGIFs();
+  const trendingGifs = await loadTrendingGIFs();
 
-  q(CONTAINER_SELECTOR).innerHTML = toTrendingView(tendingGifs.data);
+  q(CONTAINER_SELECTOR).innerHTML = toTrendingView(trendingGifs.data);
 };
 
-export const renderGIFDetails = (gifId = null) => {
-  loadSingleGIF(gifId)
-    .then(res => 
-      q(CONTAINER_SELECTOR).innerHTML = toSingleGifView(res.data));
+export const renderGIFDetails = async (gifId = null) => {
+  const singleGifDetails = await loadSingleGIF(gifId);
+
+  q(CONTAINER_SELECTOR).innerHTML = toSingleGifView(singleGifDetails.data);
 };
 
 export const renderUpload = () => {
