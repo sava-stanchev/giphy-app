@@ -22,6 +22,11 @@ document.addEventListener('DOMContentLoaded', () => {
             toggleFavoriteStatus(e.target.getAttribute('data-gif-id'));
         }
 
+        if (e.target.classList.contains('upload-btn')) {
+            const formData = new FormData(q('#upload-form'))
+          //TODO
+        }
+
     });
 
     document.getElementById('btnSearch').addEventListener('click', e => {
@@ -31,5 +36,4 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     loadPage(HOME);
-
 });

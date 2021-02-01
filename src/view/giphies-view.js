@@ -1,4 +1,4 @@
-import { renderFavoriteStatus } from "../events/helpers.js";
+import { renderFavoriteStatus } from '../events/helpers.js';
 
 export const toGiphySimple = (GIF) => `
 <a href="#" class="giphy-simple" >
@@ -19,7 +19,7 @@ export const toSingleGifView = (GIF) => `
 </div>`;
 
 
-const toGifDetailed = (GIF) =>  `
+const toGifDetailed = (GIF) => `
 <div class="gif-detailed">
   <div class="gif-image">
     <img src="${GIF.images.original.url}">

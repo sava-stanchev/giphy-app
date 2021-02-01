@@ -9,12 +9,11 @@ export const addFavorite = (gifId) => {
 
     favorites.push(gifId);
     localStorage.setItem('favorites', JSON.stringify(favorites));
-}
+};
 
 export const removeFavorite = (gifId) => {
     favorites = favorites.filter(id => id !== gifId);
     localStorage.setItem('favorites', JSON.stringify(favorites));
-
-}
+};
 
 export const getFavorites = () => [...favorites];
