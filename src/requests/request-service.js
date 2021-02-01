@@ -7,10 +7,12 @@ export const loadTrendingGIFs = async () => {
   return jsonResult;
 };
 
-export const loadSingleGIF = (gifId) => {
+export const loadSingleGIF = async (gifId) => {
 
-  return fetch(`${API_URL}/${gifId}?api_key=${API_KEY}`)
-    .then(response => response.json());
+  const response = await fetch(`${API_URL}/${gifId}?api_key=${API_KEY}`);
+  const jsonResult = response.json();
+  
+  return jsonResult;
 };
 
 export const loadSearchGifs = (searchTerm = '') => {
