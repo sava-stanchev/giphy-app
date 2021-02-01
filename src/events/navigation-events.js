@@ -1,6 +1,7 @@
 import { HOME, TRENDING, q, FAVORITES, CONTAINER_SELECTOR, UPLOAD } from '../common/constants.js';
+import { getUploaded } from '../data/uploaded.js';
 import { loadSingleGIF, loadTrendingGIFs } from '../requests/request-service.js';
-import { toGiphySimple, toSingleGifView } from '../view/giphies-view.js';
+import { toSingleGifView } from '../view/giphies-view.js';
 import { toHomeView } from '../view/home-view.js';
 import { toTrendingView } from '../view/trending-view.js';
 import { toUploadView } from '../view/upload-view.js';
@@ -23,9 +24,9 @@ export const loadPage = (page = '') => {
       setActiveNav(FAVORITES)
       return renderFavorites();
 
-    // case UPLOADED:
-    //   setActiveNav(UPLOADED)
-    //   return renderUploaded();
+    case UPLOADED:
+      setActiveNav(UPLOADED)
+      return renderUploaded();
 
     case UPLOAD:
       setActiveNav(UPLOAD)
@@ -57,3 +58,7 @@ export const renderGIFDetails = async (gifId = null) => {
 export const renderUpload = () => {
   q(CONTAINER_SELECTOR).innerHTML = toUploadView();
 };
+
+export const renderUploaded = () => {
+  q(CONTAINER_SELECTOR).innerHTML = toUploadedGifsView(getUploaded());
+}
