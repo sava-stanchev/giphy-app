@@ -64,7 +64,7 @@ export const renderUpload = () => {
 export const renderUploaded = () => {
   const uploadedGifs = await loadUploadedGifs();
 
-  q(CONTAINER_SELECTOR).innerHTML = toUploadedViews(uploadedGifs.data);
+  q(CONTAINER_SELECTOR).innerHTML = toUploadedGifsView(uploadedGifs.data);
 }
 
 const renderFavorites = () => {

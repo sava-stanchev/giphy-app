@@ -1,6 +1,6 @@
 import { toGiphySimple } from './giphies-view.js';
 
-export const toUploadedViews = (gifs) => `
+export const toUploadedGifsView = (gifs) => `
 <div id="uploaded-gifs">
   <h1>Uploaded GIFs:</h1>
   <div class="content">
