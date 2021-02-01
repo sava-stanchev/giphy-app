@@ -18,7 +18,7 @@ export const uploadForm = () => `
         <div>Select a file or drag here</div>
         <!-- message if not superted format -->
         <div id="notimage" class="hidden">Please select an image</div>
-        <span id="file-upload-btn" class="upload-btn">Select a file</span>
+        <button type="submit" id="file-upload-btn" class="btn btn-primary">Select a file</button>
       </div>
       <div id="response" class="hidden">
         <div id="messages"></div>

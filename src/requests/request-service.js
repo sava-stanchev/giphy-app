@@ -1,9 +1,10 @@
 import { API_URL, API_KEY } from '../common/constants.js'
 
-export const loadTrendingGIFs = () => {
-  
-  return fetch(`${API_URL}/trending?api_key=${API_KEY}&limit=25&rating=g`)
-    .then(response => response.json());
+export const loadTrendingGIFs = async () => {
+  const response = await fetch(`${API_URL}/trending?api_key=${API_KEY}&limit=25&rating=g`);
+  const jsonResult = await response.json();
+
+  return jsonResult;
 };
 
 export const loadSingleGIF = (gifId) => {

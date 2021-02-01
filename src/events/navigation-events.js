@@ -42,11 +42,10 @@ export const renderHome = () => {
   q(CONTAINER_SELECTOR).innerHTML = toHomeView();
 };
 
-export const renderTrending = () => {
-  loadTrendingGIFs()
-      .then(res => {
-        q(CONTAINER_SELECTOR).innerHTML = toTrendingView(res.data);
-      });
+export const renderTrending = async () => {
+  const tendingGifs = await loadTrendingGIFs();
+
+  q(CONTAINER_SELECTOR).innerHTML = toTrendingView(tendingGifs.data);
 };
 
 export const renderGIFDetails = (gifId = null) => {
