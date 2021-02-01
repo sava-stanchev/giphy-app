@@ -1,4 +1,5 @@
 import { API_URL, API_KEY, q } from '../common/constants.js'
+import { getUploaded } from '../data/uploaded.js';
 
 export const loadTrendingGIFs = async () => {
   const response = await fetch(`${API_URL}/trending?api_key=${API_KEY}&limit=25&rating=g`);
@@ -33,3 +34,10 @@ export const uploadGif = async () => {
 
   return jsonResult;
 };
+
+export const loadUploadedGifs = async () => {
+  const response = await fetch(`${API_URL}/?api_key=${API_KEY}&ids=${getUploaded().join(',')}`);
+  const jsonResult = response.json();
+
+  return jsonResult;
+}
