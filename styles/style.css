@@ -66,7 +66,6 @@ scrollbar-width: none;  /* Firefox */
 }
 
 /* Giphy simple view */
-
 .giphy-simple {
   width: 200px;
   display: inline-block;
@@ -122,8 +121,6 @@ scrollbar-width: none;  /* Firefox */
   vertical-align: middle;
 }
 
-
-
 .single-gif-content {
   padding-top: 50px;
   max-width: 600px;
@@ -142,4 +139,66 @@ scrollbar-width: none;  /* Firefox */
   text-align: left;
   padding-left: 60px;
   padding-right: 0px;
+}
+
+/* upload form */
+.content.upload {
+  padding-top: 50px;
+  max-width: 600px;
+  height: 350px;
+}
+
+#container form{
+  position: absolute;
+  top: 140px;
+  left: 50%;
+  margin-top: -100px;
+  margin-left: -250px;
+  width: 500px;
+  height: 200px;
+  border: 4px dashed #fff;
+}
+
+#container form p{
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  line-height: 170px;
+  color: #ffffff;
+  font-family: Arial;
+}
+
+#container form input{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  opacity: 0;
+}
+
+#container form button{
+  margin: 0;
+  color: #fff;
+  background:#ce2535;
+  border: none;
+  width: 508px;
+  height: 35px;
+  margin-top: -20px;
+  margin-left: -4px;
+  border-radius: 4px;
+  transition: all .2s ease;
+  outline: none;
+  font-weight: 600;
+  font-size: 18px;
+}
+
+#container form button:hover {
+  background: #f4f313;
+  color: #141619;
+}
+
+#container form button:active{
+  border:0;
 }
