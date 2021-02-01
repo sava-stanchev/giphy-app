@@ -21,15 +21,15 @@ export const loadSearchGifs = (searchTerm = '') => {
     .then(response => response.json());
 };
 
-export const uploadGif = async () => {
-  const formData = new FormData(q('#upload-form'));
+export const uploadGif = async (file) => {
+  const formData = new FormData();
+  formData.append('file', file);
   const response = await fetch(`https://upload.giphy.com/v1/gifs?api_key=${API_KEY}`,
       {
         method: 'POST',
         body: formData,
       });
   const jsonResult = await response.json();
-  console.log(jsonResult);
 
   return jsonResult;
 };

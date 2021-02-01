@@ -202,3 +202,58 @@ scrollbar-width: none;  /* Firefox */
 #container form button:active{
   border:0;
 }
+
+/* UPLOAD Message */
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: #000000c4; /* Black w/ opacity */
+}
+
+.modal.modal-open {
+  display: block;
+}
+
+/* Modal Content/Box */
+.modal-content {
+  height: 200px;
+  width: 500px !important;
+  background-color: #000000;
+  margin: 200px auto; 
+  padding: 20px;
+  top: 330px;
+  left: 50%;
+  margin-top: -100px;
+  margin-left: -250px;
+  width: 500px;
+  height: 200px;
+  border: 4px dashed #01ff0e;
+  color:#ffffff
+}
+
+.modal p {
+  font-size: 25px;
+}
+
+/* The Close Button */
+.close-modal {
+  color: #01ff0e;
+  float: right;
+  font-size: 40px;
+  font-weight: bold;
+}
+
+.close-modal:hover,
+.close-modal:focus {
+  color: #f4f313;
+  text-decoration: none;
+  cursor: pointer;
+}
