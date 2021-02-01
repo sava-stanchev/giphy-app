@@ -1,4 +1,5 @@
 import { API_URL, API_KEY, q } from '../common/constants.js'
+import { getUploaded } from '../data/uploaded.js';
 
 export const loadTrendingGIFs = async () => {
   const response = await fetch(`${API_URL}/trending?api_key=${API_KEY}&limit=25&rating=g`);
@@ -15,10 +16,10 @@ export const loadSingleGIF = async (gifId) => {
   return jsonResult;
 };
 
-export const loadSearchGifs = (searchTerm = '') => {
+export const loadSearchGifs = async (searchTerm = '') => {
+  const res = await fetch(`${API_URL}/search?api_key=${API_KEY}&q=${searchTerm}&limit=20`);
 
-  return fetch(`${API_URL}/search?api_key=${API_KEY}&q=${searchTerm}&limit=20`)
-    .then(response => response.json());
+  return res.json();
 };
 
 export const uploadGif = async (file) => {
@@ -33,3 +34,10 @@ export const uploadGif = async (file) => {
 
   return jsonResult;
 };
+
+export const loadUploadedGifs = async () => {
+  const response = await fetch(`${API_URL}/?api_key=${API_KEY}&ids=${getUploaded().join(',')}`);
+  const jsonResult = response.json();
+
+  return jsonResult;
+}

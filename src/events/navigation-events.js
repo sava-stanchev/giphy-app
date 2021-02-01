@@ -1,5 +1,8 @@
-import { HOME, TRENDING, q, FAVORITES, CONTAINER_SELECTOR, UPLOAD } from '../common/constants.js';
+import { HOME, TRENDING, q, FAVORITES, CONTAINER_SELECTOR, UPLOAD, UPLOADED } from '../common/constants.js';
+import { getFavorites } from '../data/favorites.js';
+import { getUploaded } from '../data/uploaded.js';
 import { loadSingleGIF, loadTrendingGIFs } from '../requests/request-service.js';
+import { toFavoritesView } from '../view/favorites-view.js';
 import { toSingleGifView } from '../view/giphies-view.js';
 import { toHomeView } from '../view/home-view.js';
 import { toTrendingView } from '../view/trending-view.js';
@@ -23,9 +26,9 @@ export const loadPage = (page = '') => {
       setActiveNav(FAVORITES)
       return renderFavorites();
 
-    // case UPLOADED:
-    //   setActiveNav(UPLOADED)
-    //   return renderUploaded();
+    case UPLOADED:
+      setActiveNav(UPLOADED)
+      return renderUploaded();
 
     case UPLOAD:
       setActiveNav(UPLOAD)
@@ -58,3 +61,15 @@ export const renderUploadPage = () => {
   q(CONTAINER_SELECTOR).innerHTML = toUploadView();
 };
 
+export const renderUploaded = () => {
+  const uploadedGifs = await loadUploadedGifs();
+
+  q(CONTAINER_SELECTOR).innerHTML = toUploadedGifsView(uploadedGifs.data);
+}
+
+const renderFavorites = () => {
+  const favorites = getFavorites();
+  console.log(favorites);
+  Promise.all(favorites.map(id => loadSingleGIF(id)))
+    .then(GIFs => q(CONTAINER_SELECTOR).innerHTML = toFavoritesView(GIFs));
+};

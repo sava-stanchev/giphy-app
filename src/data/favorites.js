@@ -1,9 +1,8 @@
-let favorites = JSON.parse(localStorage.getItem('favorites') || []);
+let favorites = JSON.parse(localStorage.getItem('favorites')) || [];
 
 export const addFavorite = (gifId) => {
-
     if (favorites.find(id => id === gifId)) {
-
+        
         return;
     }
 
