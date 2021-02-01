@@ -61,7 +61,7 @@ export const renderUploadPage = () => {
   q(CONTAINER_SELECTOR).innerHTML = toUploadView();
 };
 
-export const renderUploaded = () => {
+export const renderUploaded = async () => {
   const uploadedGifs = await loadUploadedGifs();
 
   q(CONTAINER_SELECTOR).innerHTML = toUploadedGifsView(uploadedGifs.data);
