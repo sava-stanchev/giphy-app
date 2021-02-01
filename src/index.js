@@ -2,6 +2,7 @@ import { renderSearchItems } from './events/search-events.js';
 import { toggleFavoriteStatus } from './events/favorites-events.js';
 import { loadPage, renderGIFDetails } from './events/navigation-events.js';
 import { q, HOME } from './common/constants.js';
+import { uploadGif } from './requests/request-service.js';
 
 document.addEventListener('DOMContentLoaded', () => {
 
@@ -23,8 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         if (e.target.classList.contains('upload-btn')) {
-            const formData = new FormData(q('#upload-form'))
-          //TODO
+            uploadGif();
         }
 
     });

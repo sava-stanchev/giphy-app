@@ -1,4 +1,4 @@
-import { API_URL, API_KEY } from '../common/constants.js'
+import { API_URL, API_KEY, q } from '../common/constants.js'
 
 export const loadTrendingGIFs = async () => {
   const response = await fetch(`${API_URL}/trending?api_key=${API_KEY}&limit=25&rating=g`);
@@ -20,12 +20,14 @@ export const loadSearchGifs = (searchTerm = '') => {
 };
 
 export const uploadGif = async () => {
+  const formData = new FormData(q('#upload-form'));
   const response = await fetch(`https://upload.giphy.com/v1/gifs?api_key=${API_KEY}`,
       {
         method: 'POST',
-        body: FormData,
+        body: formData,
       });
   const jsonResult = await response.json();
+  console.log(jsonResult);
 
   return jsonResult;
 };
