@@ -15,10 +15,10 @@ export const loadSingleGIF = async (gifId) => {
   return jsonResult;
 };
 
-export const loadSearchGifs = (searchTerm = '') => {
+export const loadSearchGifs = async (searchTerm = '') => {
+  const res = await fetch(`${API_URL}/search?api_key=${API_KEY}&q=${searchTerm}&limit=20`);
 
-  return fetch(`${API_URL}/search?api_key=${API_KEY}&q=${searchTerm}&limit=20`)
-    .then(response => response.json());
+  return res.json();
 };
 
 export const uploadGif = async () => {
