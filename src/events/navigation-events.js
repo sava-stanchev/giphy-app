@@ -1,4 +1,4 @@
-import { HOME, TRENDING, q, FAVORITES, CONTAINER_SELECTOR, UPLOAD } from '../common/constants.js';
+import { HOME, TRENDING, q, FAVORITES, CONTAINER_SELECTOR, UPLOAD, UPLOADED } from '../common/constants.js';
 import { getUploaded } from '../data/uploaded.js';
 import { loadSingleGIF, loadTrendingGIFs } from '../requests/request-service.js';
 import { toSingleGifView } from '../view/giphies-view.js';

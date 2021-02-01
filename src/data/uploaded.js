@@ -1,6 +1,6 @@
 import { uploadGif } from "../requests/request-service.js";
 
-let uploaded = JSON.parse(localStorage.getItem('uploaded') || []);
+let uploaded = JSON.parse(localStorage.getItem('uploaded')) || [];
 
 export const addToUploadedGifs = async () => {
     const uploadedGif = await uploadGif();
