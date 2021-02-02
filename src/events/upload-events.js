@@ -4,7 +4,6 @@ import { isValidFile, showMessage } from './helpers.js';
 
 
 export const renderCurrentUpload = async () => {
-
   const file = document.forms['upload-form']['file-upload'].files[0];
 
   if (!isValidFile(file)) return; // check file-type, file-size,
