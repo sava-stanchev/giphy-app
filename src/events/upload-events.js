@@ -2,7 +2,7 @@ import { q } from '../common/constants.js';
 import { addToUploadedGifs } from '../data/uploaded.js';
 import { uploadGif } from '../requests/request-service.js';
 import { isValidFile, showMessage } from './helpers.js';
-import { renderUploaded } from './navigation-events.js';
+// import { renderUploaded } from './navigation-events.js';
 
 
 export const renderCurrentUpload = async () => {

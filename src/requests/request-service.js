@@ -1,4 +1,4 @@
-import { API_URL, API_KEY, q } from '../common/constants.js'
+import { API_URL, API_KEY } from '../common/constants.js';
 import { getFavorites } from '../data/favorites.js';
 import { getUploaded } from '../data/uploaded.js';
 
@@ -24,7 +24,6 @@ export const loadSearchGifs = async (searchTerm = '') => {
 };
 
 export const uploadGif = async (formData) => {
-  // formData.append('file', file);
   const response = await fetch(`https://upload.giphy.com/v1/gifs?api_key=${API_KEY}`,
       {
         method: 'POST',
@@ -41,9 +40,9 @@ export const loadUploadedGifs = async () => {
   const jsonResult = await response.json();
 
   return jsonResult;
-}
+};
 
 export const loadFavoriteGifs = async () => {
   const res = await fetch(`${API_URL}?api_key=${API_KEY}&ids=${getFavorites().join(',')}`)
   return res.json();
-}
+};
