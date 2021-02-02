@@ -3,7 +3,6 @@ import { toggleFavoriteStatus } from './events/favorites-events.js';
 import { loadPage, renderGIFDetails } from './events/navigation-events.js';
 import { HOME, q } from './common/constants.js';
 import { renderCurrentUpload } from './events/upload-events.js';
-import { isValidFile } from './events/helpers.js';
 
 document.addEventListener('DOMContentLoaded', () => {
 
@@ -24,12 +23,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (e.target.classList.contains('upload-btn')) {
       e.preventDefault();
-      const file = document.forms['upload-form']['file-upload'].files[0];
-      renderCurrentUpload(file);
+      // const file = document.forms['upload-form']['file-upload'].files[0];
+      // renderCurrentUpload(file);
+      renderCurrentUpload();
     }
 
-    if (e.target.classList.contains('close-modal')) {
-      q('#my-modal').classList.remove('modal-open');
+    if (q('.modal-open')) {
+      if (e.target.classList.contains('close-modal')) {
+        // ||!e.target.classList.contains('modal-content')
+        q('#my-modal').classList.remove('modal-open');
+      }
     }
   });
 
@@ -43,7 +46,6 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('file-upload').addEventListener('input', () => {
       console.log('changed');
       //const file = document.forms['upload-form']['file-upload'].files[0];
-      // isValidFile(file);
       // previewFile(file);
     });
   }

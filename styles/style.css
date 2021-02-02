@@ -224,16 +224,13 @@ scrollbar-width: none;  /* Firefox */
 
 /* Modal Content/Box */
 .modal-content {
-  height: 200px;
   width: 500px !important;
   background-color: #000000;
-  margin: 200px auto; 
   padding: 20px;
   top: 330px;
   left: 50%;
   margin-top: -100px;
   margin-left: -250px;
-  width: 500px;
   height: 200px;
   border: 4px dashed #01ff0e;
   color:#ffffff
