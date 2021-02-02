@@ -35,14 +35,14 @@ export const uploadGif = async (formData) => {
 };
 
 export const loadUploadedGifs = async () => {
-  const uploadedIds = getUploaded().join(',');
-  const response = await fetch(`${API_URL}?api_key=${API_KEY}&ids=${uploadedIds}`);
+  const response = await fetch(`${API_URL}?api_key=${API_KEY}&ids=${getUploaded().join(',')}`);
   const jsonResult = await response.json();
 
   return jsonResult;
 };
 
 export const loadFavoriteGifs = async () => {
-  const res = await fetch(`${API_URL}?api_key=${API_KEY}&ids=${getFavorites().join(',')}`)
+  const res = await fetch(`${API_URL}?api_key=${API_KEY}&ids=${getFavorites().join(',')}`);
+
   return res.json();
 };
