@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (e.target.classList.contains('upload-btn')) {
       e.preventDefault();
-      const file = q('file-upload').files[0];
+      const file = document.forms['upload-form']['file-upload'].files[0];
       renderCurrentUpload(file);
     }
 
@@ -42,7 +42,7 @@ document.addEventListener('DOMContentLoaded', () => {
   if (q('#upload-form')) {
     document.getElementById('file-upload').addEventListener('input', () => {
       console.log('changed');
-      // const file = q('file-upload').files[0];
+      //const file = document.forms['upload-form']['file-upload'].files[0];
       // isValidFile(file);
       // previewFile(file);
     });

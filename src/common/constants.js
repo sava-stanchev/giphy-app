@@ -24,3 +24,4 @@ export const qs = (selector) => document.querySelectorAll(selector);
 
 export const API_URL = `https://api.giphy.com/v1/gifs`;
 
+
