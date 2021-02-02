@@ -43,6 +43,7 @@ export const loadUploadedGifs = async () => {
 }
 
 export const loadFavoriteGifs = async () => {
-  const res = await fetch(`${API_URL}/?api_key=${API_KEY}&ids=${getFavorites().join(',')}`)
+  const res = await fetch(`${API_URL}?api_key=${API_KEY}&ids=${getFavorites().join(',')}`)
+  console.log(res.json());
   return res.json();
 }
