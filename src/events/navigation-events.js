@@ -1,13 +1,14 @@
 import { HOME, TRENDING, q, FAVORITES, CONTAINER_SELECTOR, UPLOAD, UPLOADED } from '../common/constants.js';
 import { getFavorites } from '../data/favorites.js';
 import { getUploaded } from '../data/uploaded.js';
-import { loadFavoriteGifs, loadSingleGIF, loadTrendingGIFs } from '../requests/request-service.js';
+import { loadFavoriteGifs, loadSingleGIF, loadTrendingGIFs, loadUploadedGifs } from '../requests/request-service.js';
 import { toFavoritesView } from '../view/favorites-view.js';
 import { toSingleGifView } from '../view/giphies-view.js';
 import { toHomeView } from '../view/home-view.js';
 import { toTrendingView } from '../view/trending-view.js';
 import { toUploadView } from '../view/upload-view.js';
 import { setActiveNav } from './helpers.js';
+import { toUploadedGifsView } from '../view/uploaded-view.js'
 
 
 export const loadPage = (page = '') => {
