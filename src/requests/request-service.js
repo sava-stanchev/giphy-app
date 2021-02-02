@@ -2,7 +2,7 @@ import { API_URL, API_KEY } from '../common/constants.js';
 import { getFavorites } from '../data/favorites.js';
 import { addToUploadedGifs, getUploaded } from '../data/uploaded.js';
 
-export const loadTrendingGIFs = async () => {
+export const loadTrendingGifs = async () => {
   try {
     const res = await fetch(`${API_URL}/trending?api_key=${API_KEY}&limit=25&rating=g`);
 
@@ -12,7 +12,7 @@ export const loadTrendingGIFs = async () => {
   }
 };
 
-export const loadSingleGIF = async (gifId) => {
+export const loadSingleGif = async (gifId) => {
   const res = await fetch(`${API_URL}/${gifId}?api_key=${API_KEY}`);
 
   return res.json();

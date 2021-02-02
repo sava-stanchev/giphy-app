@@ -1,5 +1,5 @@
 import { HOME, TRENDING, q, FAVORITES, CONTAINER_SELECTOR, UPLOAD, UPLOADED, ABOUT } from '../common/constants.js';
-import { loadFavoriteGifs, loadSingleGIF, loadTrendingGIFs, loadUploadedGifs } from '../requests/request-service.js';
+import { loadFavoriteGifs, loadSingleGif, loadTrendingGifs, loadUploadedGifs } from '../requests/request-service.js';
 import { toFavoritesView } from '../view/favorites-view.js';
 import { toSingleGifView } from '../view/giphies-view.js';
 import { toHomeView } from '../view/home-view.js';
@@ -45,13 +45,13 @@ export const renderHome = () => {
 };
 
 export const renderTrending = async () => {
-  const trendingGifs = await loadTrendingGIFs();
+  const trendingGifs = await loadTrendingGifs();
 
   q(CONTAINER_SELECTOR).innerHTML = toTrendingView(trendingGifs.data);
 };
 
 export const renderGIFDetails = async (gifId = null) => {
-  const singleGifDetails = await loadSingleGIF(gifId);
+  const singleGifDetails = await loadSingleGif(gifId);
 
   q(CONTAINER_SELECTOR).innerHTML = toSingleGifView(singleGifDetails.data);
 };

@@ -15,13 +15,16 @@ export const renderCurrentUpload = async () => {
 };
 
 export const handleUploadOutcome = (boolean) => {
+  let message = '';
+
   if (boolean) {
-    showMessage('Your GIF was successfully uploaded!');
-    q('#file-upload').value = '';
-    // renderUploaded();
+    message = 'Your GIF was successfully uploaded!';
   } else {
-    showMessage('Unsuccessful upload!');
+    message = 'Unsuccessful upload!';
   }
+
+  showMessage(message);
+  q('#file-upload').value = '';
 };
 
 

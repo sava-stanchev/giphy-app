@@ -32,7 +32,10 @@ export const isValidFile = (file) => {
     return false;
   }
 
-  // if (file.type );
+  if (!file.type === 'image/gif' && !file.type === 'video/*') {
+    showMessage('Invalid file type');
+    return false;
+  }
 
   return true;
 };
