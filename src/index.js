@@ -3,6 +3,7 @@ import { toggleFavoriteStatus } from './events/favorites-events.js';
 import { loadPage, renderGIFDetails } from './events/navigation-events.js';
 import { HOME, q } from './common/constants.js';
 import { renderCurrentUpload } from './events/upload-events.js';
+import { isValidFile } from './events/helpers.js';
 
 document.addEventListener('DOMContentLoaded', () => {
 
@@ -23,7 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (e.target.classList.contains('upload-btn')) {
       e.preventDefault();
-      const file = document.forms['upload-form']['file-upload'].files[0];
+      const file = q('file-upload').files[0];
       renderCurrentUpload(file);
     }
 
@@ -37,6 +38,15 @@ document.addEventListener('DOMContentLoaded', () => {
     const input = document.getElementById('search').value;
     renderSearchItems(input);
   });
+
+  if (q('#upload-form')) {
+    document.getElementById('file-upload').addEventListener('input', () => {
+      console.log('changed');
+      // const file = q('file-upload').files[0];
+      // isValidFile(file);
+      // previewFile(file);
+    });
+  }
 
   loadPage(HOME);
 });

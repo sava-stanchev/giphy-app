@@ -15,7 +15,7 @@ export const toUploadView = () => `
 
 export const uploadForm = `
 <form id="upload-form">
-  <input type="file" id="file-upload" name="fileUpload" accept="image/gif,video/*" />
+  <input type="file" id="file-upload" name="fileUpload" accept="image/gif,video/*" value="" />
   <p>Drag your files here or click in this area.</p>
   <button type="submit" id="file-upload-btn" class="upload-btn">UPLOAD</button>
 </form>

@@ -37,7 +37,6 @@ export const loadPage = (page = '') => {
     // case ABOUT:
     //   setActiveNav(ABOUT)
     //   return renderAbout();
-
   }
 };
 
@@ -69,7 +68,6 @@ export const renderUploaded = async () => {
 
 const renderFavorites = () => {
   const favorites = getFavorites();
-  console.log(favorites);
   Promise.all(favorites.map(id => loadSingleGIF(id)))
     .then(GIFs => q(CONTAINER_SELECTOR).innerHTML = toFavoritesView(GIFs));
 };

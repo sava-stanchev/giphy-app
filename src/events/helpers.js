@@ -1,4 +1,4 @@
-import { EMPTY_HEART, FULL_HEART, qs } from '../common/constants.js';
+import { EMPTY_HEART, FULL_HEART, q, qs } from '../common/constants.js';
 import { getFavorites } from '../data/favorites.js';
 
 export const setActiveNav = (page) => {
@@ -22,7 +22,16 @@ export const renderFavoriteStatus = (gifId) => {
 };
 
 export const isValidFile = (file) => {
-  //TODO
+  if (!file) {
+    showMessage('Please select a file to upload!');
+  }
+  // check the size
+  // check the type
+};
+
+export const showMessage = (message) => {
+  q('#upload-message').innerHTML = message;
+  q('#my-modal').classList.add('modal-open');
 };
 
 // export const renderUserInfo = (GIF) => {

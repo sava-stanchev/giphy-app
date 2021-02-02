@@ -1,6 +1,8 @@
 // import { isValidFile } from './events/helpers.js';
-import { q } from "../common/constants.js";
-import { uploadGif } from "../requests/request-service.js";
+import { q } from '../common/constants.js';
+import { uploadGif } from '../requests/request-service.js';
+import { renderUploaded } from './navigation-events.js';
+import { showMessage } from './helpers.js';
 
 
 export const renderCurrentUpload = async (file) => {
@@ -23,19 +25,12 @@ export const storeUploadedGifId = (response) => {
 
 export const handleUploadOutcome = (boolean) => {
   if (boolean) {
-    showUploadMessage(true);
+    showMessage('Your GIF was successfully uploaded!');
     q('#file-upload').value = '';
-    //load uploaded GIFs
+    renderUploaded();
   } else {
-    showUploadMessage(false);
+    showMessage('Unsuccessful upload!');
   }
 };
 
-export const showUploadMessage = (boolean) => {
-  if (boolean) {
-    q('#upload-message').innerHTML = 'Your GIF was successfully uploaded!';
-  } else {
-    q('#upload-message').innerHTML = 'Unsuccessful upload!';
-  }
-  q('#my-modal').classList.add('modal-open');
-};
+
