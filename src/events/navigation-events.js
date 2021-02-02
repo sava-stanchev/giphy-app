@@ -1,7 +1,7 @@
 import { HOME, TRENDING, q, FAVORITES, CONTAINER_SELECTOR, UPLOAD, UPLOADED } from '../common/constants.js';
 import { getFavorites } from '../data/favorites.js';
 import { getUploaded } from '../data/uploaded.js';
-import { loadSingleGIF, loadTrendingGIFs } from '../requests/request-service.js';
+import { loadFavoriteGifs, loadSingleGIF, loadTrendingGIFs } from '../requests/request-service.js';
 import { toFavoritesView } from '../view/favorites-view.js';
 import { toSingleGifView } from '../view/giphies-view.js';
 import { toHomeView } from '../view/home-view.js';
@@ -66,8 +66,9 @@ export const renderUploaded = async () => {
   q(CONTAINER_SELECTOR).innerHTML = toUploadedGifsView(uploadedGifs.data);
 }
 
-const renderFavorites = () => {
-  const favorites = getFavorites();
-  Promise.all(favorites.map(id => loadSingleGIF(id)))
-    .then(GIFs => q(CONTAINER_SELECTOR).innerHTML = toFavoritesView(GIFs));
+export const renderFavorites = async () => {
+  const favoriteGifs = await loadFavoriteGifs();
+  console.log(favoriteGifs.data);
+  
+  q(CONTAINER_SELECTOR).innerHTML = toFavoritesView(favoriteGifs.data);
 };
