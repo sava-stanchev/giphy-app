@@ -1,7 +1,7 @@
 
 const uploaded = JSON.parse(localStorage.getItem('uploaded')) || [];
 
-export const addToUploadedGifs = async (response) => {
+export const addToUploadedGifs = (response) => {
   const uploadedGif = response.data.id;
   uploaded.push(uploadedGif);
 

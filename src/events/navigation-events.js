@@ -1,4 +1,4 @@
-import { HOME, TRENDING, q, FAVORITES, CONTAINER_SELECTOR, UPLOAD, UPLOADED } from '../common/constants.js';
+import { HOME, TRENDING, q, FAVORITES, CONTAINER_SELECTOR, UPLOAD, UPLOADED, ABOUT } from '../common/constants.js';
 import { loadFavoriteGifs, loadSingleGIF, loadTrendingGIFs, loadUploadedGifs } from '../requests/request-service.js';
 import { toFavoritesView } from '../view/favorites-view.js';
 import { toSingleGifView } from '../view/giphies-view.js';
@@ -7,6 +7,7 @@ import { toTrendingView } from '../view/trending-view.js';
 import { toUploadView } from '../view/upload-view.js';
 import { setActiveNav } from './helpers.js';
 import { toUploadedGifsView } from '../view/uploaded-view.js'
+import { toAboutView } from '../view/about-view.js';
 
 
 export const loadPage = (page = '') => {
@@ -33,9 +34,9 @@ export const loadPage = (page = '') => {
       setActiveNav(UPLOAD)
       return renderUploadPage();
 
-    // case ABOUT:
-    //   setActiveNav(ABOUT)
-    //   return renderAbout();
+    case ABOUT:
+      setActiveNav(ABOUT)
+      return renderAbout();
   }
 };
 
@@ -70,3 +71,7 @@ export const renderFavorites = async () => {
 
   q(CONTAINER_SELECTOR).innerHTML = toFavoritesView(favoriteGifs.data);
 };
+
+export const renderAbout = () => {
+q(CONTAINER_SELECTOR).innerHTML = toAboutView();
+}

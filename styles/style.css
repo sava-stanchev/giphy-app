@@ -18,8 +18,8 @@ footer {
   position: absolute;
   top: 100px;
   left: 320px;
-  color:#ffffff;
-  
+  color: #ffffff;
+
 }
 
 .content {
@@ -29,7 +29,7 @@ footer {
   left: 0;
   top: 180px;
   bottom: 50px;
-  margin-top:10px;
+  margin-top: 10px;
   margin-right: auto;
   margin-left: auto;
   max-width: 900px;
@@ -51,18 +51,20 @@ footer {
 
 /* Hide scrollbar for IE, Edge and Firefox */
 .content {
--ms-overflow-style: none;  /* IE and Edge */
-scrollbar-width: none;  /* Firefox */
+  -ms-overflow-style: none;
+  /* IE and Edge */
+  scrollbar-width: none;
+  /* Firefox */
 }
 
 
 /* Navigation styles */
 .bg-dark {
-  background-color: #000000!important;
+  background-color: #000000 !important;
 }
 
 .nav-link.active {
-  color: #01ff0e!important;
+  color: #01ff0e !important;
 }
 
 /* Giphy simple view */
@@ -72,7 +74,7 @@ scrollbar-width: none;  /* Firefox */
   margin: 10px 0;
 }
 
-.content .wrapper{
+.content .wrapper {
   position: relative;
   display: inline-block;
   height: 100%;
@@ -94,13 +96,13 @@ scrollbar-width: none;  /* Firefox */
 .giphy-simple .favorite .favorite {
   right: 0;
   top: 0;
-} 
-
-.giphy-image {
-  object-fit:cover;
 }
 
-.user-info{
+.giphy-image {
+  object-fit: cover;
+}
+
+.user-info {
   bottom: 10px;
   position: absolute;
   height: 50px;
@@ -113,7 +115,8 @@ scrollbar-width: none;  /* Firefox */
   height: 40px;
 }
 
-.user-info .username, .user-info .avatar-holder {
+.user-info .username,
+.user-info .avatar-holder {
   display: inline-block;
   margin-left: 5px;
   height: 40px;
@@ -133,6 +136,7 @@ scrollbar-width: none;  /* Firefox */
 .col {
   flex: 50%;
 }
+
 .col>p {
   color: #CE2536;
   margin: 0px;
@@ -148,7 +152,7 @@ scrollbar-width: none;  /* Firefox */
   height: 350px;
 }
 
-#container form{
+#container form {
   position: absolute;
   top: 140px;
   left: 50%;
@@ -159,7 +163,7 @@ scrollbar-width: none;  /* Firefox */
   border: 4px dashed #fff;
 }
 
-#container form p{
+#container form p {
   width: 100%;
   height: 100%;
   text-align: center;
@@ -168,7 +172,7 @@ scrollbar-width: none;  /* Firefox */
   font-family: Arial;
 }
 
-#container form input{
+#container form input {
   position: absolute;
   top: 0;
   left: 0;
@@ -178,10 +182,10 @@ scrollbar-width: none;  /* Firefox */
   opacity: 0;
 }
 
-#container form button{
+#container form button {
   margin: 0;
   color: #fff;
-  background:#ce2535;
+  background: #ce2535;
   border: none;
   width: 508px;
   height: 35px;
@@ -199,23 +203,30 @@ scrollbar-width: none;  /* Firefox */
   color: #141619;
 }
 
-#container form button:active{
-  border:0;
+#container form button:active {
+  border: 0;
 }
 
 /* UPLOAD Message */
 
 /* The Modal (background) */
 .modal {
-  display: none; /* Hidden by default */
-  position: fixed; /* Stay in place */
-  z-index: 1; /* Sit on top */
+  display: none;
+  /* Hidden by default */
+  position: fixed;
+  /* Stay in place */
+  z-index: 1;
+  /* Sit on top */
   left: 0;
   top: 0;
-  width: 100%; /* Full width */
-  height: 100%; /* Full height */
-  overflow: auto; /* Enable scroll if needed */
-  background-color: #000000c4; /* Black w/ opacity */
+  width: 100%;
+  /* Full width */
+  height: 100%;
+  /* Full height */
+  overflow: auto;
+  /* Enable scroll if needed */
+  background-color: #000000c4;
+  /* Black w/ opacity */
 }
 
 .modal.modal-open {
@@ -233,7 +244,7 @@ scrollbar-width: none;  /* Firefox */
   margin-left: -250px;
   height: 200px;
   border: 4px dashed #01ff0e;
-  color:#ffffff
+  color: #ffffff
 }
 
 .modal p {
@@ -254,3 +265,13 @@ scrollbar-width: none;  /* Firefox */
   text-decoration: none;
   cursor: pointer;
 }
+
+#uploaded-gifs, #about {
+  color: white;
+  
+}
+
+#about > .content > h1 {
+  position: initial;
+}
+

@@ -29,6 +29,6 @@ const toGifDetailed = (GIF) => `
     <p>Uploaded: ${GIF.import_datetime.substring(0, 10)}</p></div>
     <div class="col"><p>Dimensions: ${GIF.images.downsized_large.width} x 
     ${GIF.images.downsized_large.height} px</p>
-    <p>Rating: ${GIF.rating.toUpperCase()}</p></div>
+    <p>Rating: ${GIF.rating.toUpperCase() || 'unknown'}</p></div>
   </div>
 </div>`;
