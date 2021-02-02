@@ -1,3 +1,9 @@
+/**
+ * @author Dimitar Stanoev
+ * Provides the HTML template for the about page
+ * @return {string} the HTML template, in which
+ * the about content is rendered
+ */
 export const toAboutView = () => `
 <div id="about">
     <div class="content">
