@@ -50,6 +50,11 @@ const renderTrending = async () => {
   q(CONTAINER_SELECTOR).innerHTML = toTrendingView(trendingGifs.data);
 };
 
+/**
+ * @author Dimitar Stanoev
+ * Renders single GIF details
+ * @return {null} does not return a value
+ */
 export const renderGIFDetails = async (gifId = null) => {
   const singleGifDetails = await loadSingleGif(gifId);
 
@@ -60,7 +65,12 @@ const renderUploadPage = () => {
   q(CONTAINER_SELECTOR).innerHTML = toUploadView();
 };
 
-const renderUploaded = async () => {
+/**
+ * @author Dimitar Stanoev
+ * Renders uploaded GIFs
+ * @return {null} does not return a value
+ */
+export const renderUploaded = async () => {
   const uploadedGifs = await loadUploadedGifs();
 
   q(CONTAINER_SELECTOR).innerHTML = toUploadedGifsView(uploadedGifs.data);

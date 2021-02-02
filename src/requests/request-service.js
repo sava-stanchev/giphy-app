@@ -12,6 +12,11 @@ export const loadTrendingGifs = async () => {
   }
 };
 
+/**
+ * @author Dimitar Stanoev
+ * Sends GET request to retrieve data by GIF ID
+ * @return {Promise} promise object containing the response data
+ */
 export const loadSingleGif = async (gifId) => {
   const res = await fetch(`${API_URL}/${gifId}?api_key=${API_KEY}`);
 
@@ -42,6 +47,11 @@ export const uploadGif = async (formData) => {
   }
 };
 
+/**
+ * @author Dimitar Stanoev
+ * Sends GET request to retrieve data by GIF IDs
+ * @return {Promise} promise object containing the response data
+ */
 export const loadUploadedGifs = async () => {
   const res = await fetch(`${API_URL}?api_key=${API_KEY}&ids=${getUploaded().join(',')}`);
 

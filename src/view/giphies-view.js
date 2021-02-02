@@ -10,6 +10,12 @@ export const toGiphySimple = (gif) => `
 </a>
 `;
 
+/**
+ * @author Dimitar Stanoev
+ * Provides HTML template for a single GIF to be displayed
+ * @param {object} gif - an object that contains data about the gif
+ * @return {string} the HTML template, in which the GIF is rendered
+ */
 export const toSingleGifView = (gif) => `
 <div id="single-gif">
   <h1>${gif.title}</h1>
@@ -18,7 +24,13 @@ export const toSingleGifView = (gif) => `
   </div>
 </div>`;
 
-
+/**
+ * @author Dimitar Stanoev
+ * Provides GIF details
+ * @param {object} an object that contains the response data
+ * @return {string} the HTML template, which includes detailed
+ * information about the GIF
+ */
 const toGifDetailed = (gif) => `
 <div class="gif-detailed">
   <div class="gif-image">
