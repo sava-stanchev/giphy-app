@@ -6,37 +6,37 @@ import { toHomeView } from '../view/home-view.js';
 import { toTrendingView } from '../view/trending-view.js';
 import { toUploadView } from '../view/upload-view.js';
 import { setActiveNav } from './helpers.js';
-import { toUploadedGifsView } from '../view/uploaded-view.js'
+import { toUploadedGifsView } from '../view/uploaded-view.js';
 import { toAboutView } from '../view/about-view.js';
 
 
 export const loadPage = (page = '') => {
-
   switch (page) {
-
     case HOME:
       setActiveNav(HOME);
       return renderHome();
 
     case TRENDING:
-      setActiveNav(TRENDING)
+      setActiveNav(TRENDING);
       return renderTrending();
 
     case FAVORITES:
-      setActiveNav(FAVORITES)
+      setActiveNav(FAVORITES);
       return renderFavorites();
 
     case UPLOADED:
-      setActiveNav(UPLOADED)
+      setActiveNav(UPLOADED);
       return renderUploaded();
 
     case UPLOAD:
-      setActiveNav(UPLOAD)
+      setActiveNav(UPLOAD);
       return renderUploadPage();
 
     case ABOUT:
-      setActiveNav(ABOUT)
+      setActiveNav(ABOUT);
       return renderAbout();
+
+    default: return null;
   }
 };
 
@@ -73,5 +73,5 @@ export const renderFavorites = async () => {
 };
 
 export const renderAbout = () => {
-q(CONTAINER_SELECTOR).innerHTML = toAboutView();
-}
+  q(CONTAINER_SELECTOR).innerHTML = toAboutView();
+};

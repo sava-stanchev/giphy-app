@@ -10,11 +10,9 @@ export const loadTrendingGIFs = async () => {
 };
 
 export const loadSingleGIF = async (gifId) => {
+  const res = await fetch(`${API_URL}/${gifId}?api_key=${API_KEY}`);
 
-  const response = await fetch(`${API_URL}/${gifId}?api_key=${API_KEY}`);
-  const jsonResult = response.json();
-  
-  return jsonResult;
+  return res.json();
 };
 
 export const loadSearchGifs = async (searchTerm = '') => {
@@ -35,10 +33,9 @@ export const uploadGif = async (formData) => {
 };
 
 export const loadUploadedGifs = async () => {
-  const response = await fetch(`${API_URL}?api_key=${API_KEY}&ids=${getUploaded().join(',')}`);
-  const jsonResult = await response.json();
+  const res = await fetch(`${API_URL}?api_key=${API_KEY}&ids=${getUploaded().join(',')}`);
 
-  return jsonResult;
+  return res.json();
 };
 
 export const loadFavoriteGifs = async () => {

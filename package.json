@@ -24,5 +24,6 @@
   "bugs": {
     "url": "https://gitlab.com/SavaSt/web-team-project/issues"
   },
-  "homepage": "https://gitlab.com/SavaSt/web-team-project#readme"
+  "homepage": "https://gitlab.com/SavaSt/web-team-project#readme",
+  "dependencies": {}
 }
