@@ -1,12 +1,19 @@
 import { API_URL, API_KEY } from '../common/constants.js';
 import { getFavorites } from '../data/favorites.js';
-import { getUploaded } from '../data/uploaded.js';
+import { addToUploadedGifs, getUploaded } from '../data/uploaded.js';
 
 export const loadTrendingGIFs = async () => {
-  const response = await fetch(`${API_URL}/trending?api_key=${API_KEY}&limit=25&rating=g`);
-  const jsonResult = await response.json();
 
-  return jsonResult;
+  try {
+    const res = await fetch(`${API_URL}/trending
+    ?api_key=${API_KEY}&limit=25&rating=g`);
+
+    return res.json();
+
+  } catch (err) {
+    
+    return console.log(err);
+  }
 };
 
 export const loadSingleGIF = async (gifId) => {
@@ -24,14 +31,22 @@ export const loadSearchGifs = async (searchTerm = '') => {
 };
 
 export const uploadGif = async (formData) => {
-  const response = await fetch(`https://upload.giphy.com/v1/gifs?api_key=${API_KEY}`,
-      {
-        method: 'POST',
-        body: formData,
-      });
-  const jsonResult = await response.json();
+  try {
+    const res = await fetch(`https://upload.giphy.com/v1/gifs?api_key=${API_KEY}`,
+        {
+          method: 'POST',
+          body: formData,
+        });
+    const jsonResult = await res.json();
+    addToUploadedGifs(jsonResult);
 
-  return jsonResult;
+    return true;
+    
+  } catch (err) {
+    console.log(err);
+
+    return false;
+  }
 };
 
 export const loadUploadedGifs = async () => {

@@ -1,8 +1,6 @@
 import { q } from '../common/constants.js';
-import { addToUploadedGifs } from '../data/uploaded.js';
 import { uploadGif } from '../requests/request-service.js';
 import { isValidFile, showMessage } from './helpers.js';
-// import { renderUploaded } from './navigation-events.js';
 
 
 export const renderCurrentUpload = async () => {
@@ -12,16 +10,9 @@ export const renderCurrentUpload = async () => {
   if (!isValidFile(file)) return; // check file-type, file-size,
 
   const formData = new FormData(q('#upload-form'));
+  const uploadOutcome = await uploadGif(formData);
 
-  try {
-    const response = await uploadGif(formData);
-    console.log(response);
-    addToUploadedGifs(response);
-    handleUploadOutcome(true);
-  } catch {
-    // console.log(e)
-    handleUploadOutcome(false);
-  }
+  handleUploadOutcome(uploadOutcome);
 };
 
 export const handleUploadOutcome = (boolean) => {
