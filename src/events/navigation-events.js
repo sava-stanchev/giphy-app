@@ -65,11 +65,10 @@ export const renderUploaded = async () => {
   const uploadedGifs = await loadUploadedGifs();
 
   q(CONTAINER_SELECTOR).innerHTML = toUploadedGifsView(uploadedGifs.data);
-}
+};
 
 export const renderFavorites = async () => {
   const favoriteGifs = await loadFavoriteGifs();
-  console.log(favoriteGifs.data);
-  
+
   q(CONTAINER_SELECTOR).innerHTML = toFavoritesView(favoriteGifs.data);
 };

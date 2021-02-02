@@ -23,14 +23,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (e.target.classList.contains('upload-btn')) {
       e.preventDefault();
-      // const file = document.forms['upload-form']['file-upload'].files[0];
-      // renderCurrentUpload(file);
+
       renderCurrentUpload();
     }
 
     if (q('.modal-open')) {
       if (e.target.classList.contains('close-modal')) {
-        // ||!e.target.classList.contains('modal-content')
         q('#my-modal').classList.remove('modal-open');
       }
     }

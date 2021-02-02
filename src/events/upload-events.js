@@ -1,6 +1,8 @@
 import { q } from '../common/constants.js';
+import { addToUploadedGifs } from '../data/uploaded.js';
 import { uploadGif } from '../requests/request-service.js';
 import { isValidFile, showMessage } from './helpers.js';
+import { renderUploaded } from './navigation-events.js';
 
 
 export const renderCurrentUpload = async () => {
@@ -14,16 +16,12 @@ export const renderCurrentUpload = async () => {
   try {
     const response = await uploadGif(formData);
     console.log(response);
-    storeUploadedGifId(response);
+    addToUploadedGifs(response);
     handleUploadOutcome(true);
   } catch {
     // console.log(e)
     handleUploadOutcome(false);
   }
-};
-
-export const storeUploadedGifId = (response) => {
-  // TODO
 };
 
 export const handleUploadOutcome = (boolean) => {
