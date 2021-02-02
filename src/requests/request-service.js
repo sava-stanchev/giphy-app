@@ -4,8 +4,7 @@ import { addToUploadedGifs, getUploaded } from '../data/uploaded.js';
 
 export const loadTrendingGIFs = async () => {
   try {
-    const res = await fetch(`${API_URL}/trending
-    ?api_key=${API_KEY}&limit=25&rating=g`);
+    const res = await fetch(`${API_URL}/trending?api_key=${API_KEY}&limit=25&rating=g`);
 
     return res.json();
   } catch (err) {
