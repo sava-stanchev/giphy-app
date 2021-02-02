@@ -53,3 +53,9 @@ export const loadFavoriteGifs = async () => {
 
   return res.json();
 };
+
+export const loadRandomGif = async () => {
+  const res = await fetch(`${API_URL}/random?api_key=${API_KEY}`);
+  
+  return res.json();
+}
