@@ -127,9 +127,18 @@ footer {
   max-width: 600px;
 }
 
+.gif-image {
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.gif-image img{
+  width: 100%;
+}
+
 .gif-image > span {
   position: absolute;
-  right: 75px;
+  right: 60px;
   top: 55px;
   width: 60px;
   height: 60px;
@@ -138,6 +147,7 @@ footer {
   line-height: 60px;
   vertical-align: middle;
   text-align: center;
+  cursor: pointer;
 }
 
 .favorite .favorite {
@@ -157,8 +167,8 @@ footer {
   color: #CE2536;
   margin: 0px;
   text-align: left;
-  padding-left: 60px;
-  padding-right: 0px;
+  padding-left: 50px;
+  padding-right: 50px;
 }
 
 /* upload form */
