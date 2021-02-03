@@ -5,9 +5,10 @@ import { toSingleGifView } from '../view/giphies-view.js';
 import { toHomeView } from '../view/home-view.js';
 import { toTrendingView } from '../view/trending-view.js';
 import { toUploadView } from '../view/upload-view.js';
-import { setActiveNav } from './helpers.js';
+import { setActiveNav, showMessage } from './helpers.js';
 import { toUploadedGifsView } from '../view/uploaded-view.js';
 import { toAboutView } from '../view/about-view.js';
+import { toMessageView } from '../view/message-view.js';
 
 
 export const loadPage = (page = '') => {
@@ -45,9 +46,14 @@ const renderHome = () => {
 };
 
 const renderTrending = async () => {
-  const trendingGifs = await loadTrendingGifs();
 
-  q(CONTAINER_SELECTOR).innerHTML = toTrendingView(trendingGifs.data);
+  const trendingGifs = await loadTrendingGifs();
+  if (trendingGifs) {
+    q(CONTAINER_SELECTOR).innerHTML = toTrendingView(trendingGifs.data);
+  } else {
+    q(CONTAINER_SELECTOR).innerHTML = toMessageView();
+    showMessage('Something went wrong!');
+  }
 };
 
 /**
