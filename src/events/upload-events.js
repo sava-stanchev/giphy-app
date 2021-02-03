@@ -20,6 +20,10 @@ export const showPreview = () => {
   q('#img').src = src;
   q('#preview').classList.add('visible');
 };
+export const hidePreview = () => {
+  q('#img').src = ' ';
+  q('#preview').classList.remove('visible');
+};
 
 export const handleUploadOutcome = (boolean) => {
   let message = '';

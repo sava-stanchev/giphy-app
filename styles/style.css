@@ -163,6 +163,10 @@ footer {
   border: 4px dashed #fff;
 }
 
+#container form:hover {
+  background-color: #2b2b2b
+}
+
 #container form p {
   width: 100%;
   height: 100%;
@@ -195,6 +199,7 @@ footer {
   outline: none;
   font-weight: 600;
   font-size: 18px;
+  cursor: pointer;
 }
 
 #container form .upload-btn:hover {
@@ -225,10 +230,7 @@ footer {
   display: inline-block
 }
 
-
-
 /* MESSAGE */
-
 /* The Modal (background) */
 .modal {
   display: none;
@@ -246,7 +248,6 @@ footer {
   display: block;
 }
 
-/* Modal Content/Box */
 .modal-content {
   width: 500px !important;
   background-color: #000000;
@@ -264,7 +265,6 @@ footer {
   font-size: 25px;
 }
 
-/* The Close Button */
 .close-modal {
   color: #01ff0e;
   float: right;

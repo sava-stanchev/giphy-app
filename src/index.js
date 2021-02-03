@@ -2,7 +2,7 @@ import { renderSearchItems } from './events/search-events.js';
 import { toggleFavoriteStatus } from './events/favorites-events.js';
 import { loadPage, renderGIFDetails } from './events/navigation-events.js';
 import { HOME, q } from './common/constants.js';
-import { renderCurrentUpload, showPreview } from './events/upload-events.js';
+import { renderCurrentUpload, showPreview, hidePreview } from './events/upload-events.js';
 
 document.addEventListener('DOMContentLoaded', () => {
 
@@ -28,6 +28,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (q('.modal-open')) {
       if (e.target.classList.contains('close-modal')) {
         q('#my-modal').classList.remove('modal-open');
+        hidePreview();
       }
     }
 
