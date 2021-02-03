@@ -4,7 +4,7 @@ import { addToUploadedGifs, getUploaded } from '../data/uploaded.js';
 
 export const loadTrendingGifs = async () => {
   try {
-    const res = await fetch(`${API_URL}/trending?api_key=${API_KEY}&limit=25&rating=g`);
+    const res = await fetch(`${API_URL}/trending?api_key=${API_KEY}&limit=30&rating=g`);
 
     if (!res.ok) {
       throw new Error('Error');
@@ -24,7 +24,7 @@ export const loadTrendingGifs = async () => {
  */
 export const loadSingleGif = async (gifId) => {
   try {
-    const res = await fetch(`${API_URL}/${gifId}?aspi_key=${API_KEY}`);
+    const res = await fetch(`${API_URL}/${gifId}?api_key=${API_KEY}`);
     if (!res.ok) {
       throw new Error('Error');
     }
@@ -38,7 +38,7 @@ export const loadSingleGif = async (gifId) => {
 };
 
 export const loadSearchGifs = async (searchTerm = '') => {
-  const res = await fetch(`${API_URL}/search?api_key=${API_KEY}&q=${searchTerm}&limit=20`);
+  const res = await fetch(`${API_URL}/search?api_key=${API_KEY}&q=${searchTerm}&limit=30`);
 
   return res.json();
 };
