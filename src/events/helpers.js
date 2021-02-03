@@ -41,6 +41,6 @@ export const isValidFile = (file) => {
 };
 
 export const showMessage = (message) => {
-  q('#upload-message').innerHTML = message;
+  q('#message').innerHTML = message;
   q('#my-modal').classList.add('modal-open');
 };

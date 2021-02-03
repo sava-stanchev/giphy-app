@@ -4,19 +4,19 @@
  * @return {string} the HTML template, in which the uploaded GIFs
  * are rendered
  */
-export const toMessageView = () => `
+export const toErrorMessageView = () => `
 <h1>Upload your GIFs and Stickers</h1>
 <div class="content upload">
   <div class="content-inner">
-    ${message}    
+    ${errorMessage}    
   </div>
 </div>
 `;
-export const message = `
+export const errorMessage = `
   <div id="my-modal" class="modal">
     <div class="modal-content">
-      <span class="close-modal">&times;</span>
-      <p id="upload-message"></p>
+      <span class="close-error-message">&times;</span>
+      <p id="message"></p>
     </div>
   </div>
 `;

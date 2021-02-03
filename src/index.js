@@ -26,9 +26,13 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     if (q('.modal-open')) {
-      if (e.target.classList.contains('close-modal')) {
+      if (e.target.classList.contains('close-upload-message')) {
         q('#my-modal').classList.remove('modal-open');
         hidePreview();
+      }
+      if (e.target.classList.contains('close-error-message')) {
+        q('#my-modal').classList.remove('modal-open');
+        loadPage(HOME);
       }
     }
 

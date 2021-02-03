@@ -265,15 +265,18 @@ footer {
   font-size: 25px;
 }
 
-.close-modal {
+.close-upload-message,
+.close-error-message {
   color: #01ff0e;
   float: right;
   font-size: 40px;
   font-weight: bold;
 }
 
-.close-modal:hover,
-.close-modal:focus {
+.close-upload-message:hover,
+.close-upload-message:focus,
+.close-error-message:hover,
+.close-error-message:focus {
   color: #f4f313;
   text-decoration: none;
   cursor: pointer;
@@ -281,7 +284,6 @@ footer {
 
 #uploaded-gifs, #about {
   color: white;
-  
 }
 
 /* About */

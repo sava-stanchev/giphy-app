@@ -9,7 +9,7 @@ export const toUploadView = () => `
 <div class="content upload">
   <div class="content-inner">
     ${uploadForm}
-    ${message}    
+    ${uploadMessage}    
   </div>
 </div>
 `;
@@ -29,4 +29,11 @@ export const uploadForm = `
 </form>
 `;
 
-
+export const uploadMessage = `
+  <div id="my-modal" class="modal">
+    <div class="modal-content">
+      <span class="close-upload-message">&times;</span>
+      <p id="message"></p>
+    </div>
+  </div>
+`;

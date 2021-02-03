@@ -8,7 +8,7 @@ import { toUploadView } from '../view/upload-view.js';
 import { setActiveNav, showMessage } from './helpers.js';
 import { toUploadedGifsView } from '../view/uploaded-view.js';
 import { toAboutView } from '../view/about-view.js';
-import { toMessageView } from '../view/message-view.js';
+import { toErrorMessageView } from '../view/message-view.js';
 
 
 export const loadPage = (page = '') => {
@@ -51,7 +51,7 @@ const renderTrending = async () => {
   if (trendingGifs) {
     q(CONTAINER_SELECTOR).innerHTML = toTrendingView(trendingGifs.data);
   } else {
-    q(CONTAINER_SELECTOR).innerHTML = toMessageView();
+    q(CONTAINER_SELECTOR).innerHTML = toErrorMessageView();
     showMessage('Something went wrong!');
   }
 };
@@ -67,7 +67,7 @@ export const renderGIFDetails = async (gifId = null) => {
   if (singleGifDetails) {
     q(CONTAINER_SELECTOR).innerHTML = toSingleGifView(singleGifDetails.data);
   } else {
-    q(CONTAINER_SELECTOR).innerHTML = toMessageView();
+    q(CONTAINER_SELECTOR).innerHTML = toErrorMessageView();
     showMessage('Something went wrong!');
   }
   
