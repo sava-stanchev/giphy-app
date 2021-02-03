@@ -39,6 +39,7 @@ export const toSingleGifView = (gif) => `
 const toGifDetailed = (gif) => `
 <div class="gif-detailed">
   <div class="gif-image">
+  ${renderFavoriteStatus(gif.id)} 
     <img src="${gif.images.original.url}">
   </div>
   <div class="gif-info">

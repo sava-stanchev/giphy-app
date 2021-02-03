@@ -24,7 +24,7 @@ export const loadTrendingGifs = async () => {
  */
 export const loadSingleGif = async (gifId) => {
   try {
-    const res = await fetch(`${API_URL}/${gifId}?aspi_key=${API_KEY}`);
+    const res = await fetch(`${API_URL}/${gifId}?api_key=${API_KEY}`);
     if (!res.ok) {
       throw new Error('Error');
     }
