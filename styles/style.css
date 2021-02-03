@@ -288,3 +288,8 @@ footer {
   position: initial;
 }
 
+.uploaded-msg {
+  position: absolute;
+  left: 300px;
+  color: grey;
+}
