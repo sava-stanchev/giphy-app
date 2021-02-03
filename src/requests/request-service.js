@@ -7,7 +7,7 @@ export const loadTrendingGifs = async () => {
     const res = await fetch(`${API_URL}/trending?api_key=${API_KEY}&limit=25&rating=g`);
 
     if (!res.ok) {
-      throw new Error('Error')
+      throw new Error('Error');
     }
     return res.json();
   } catch (err) {
@@ -19,24 +19,22 @@ export const loadTrendingGifs = async () => {
 /**
  * @author Dimitar Stanoev
  * Sends GET request to retrieve data by GIF ID
+ * @param {string} gifId that is added in the URL
  * @return {Promise} promise object containing the response data
  */
 export const loadSingleGif = async (gifId) => {
-  
   try {
     const res = await fetch(`${API_URL}/${gifId}?aspi_key=${API_KEY}`);
     if (!res.ok) {
-      throw new Error('Error')
+      throw new Error('Error');
     }
 
     return res.json();
-
   } catch (error) {
     console.log(error);
 
     return false;
   }
-  
 };
 
 export const loadSearchGifs = async (searchTerm = '') => {
@@ -81,6 +79,6 @@ export const loadFavoriteOrRandomGifs = async () => {
   } else {
     res = await fetch(`${API_URL}?api_key=${API_KEY}&ids=${getFavorites().join(',')}`);
   }
-  
+
   return res.json();
 };

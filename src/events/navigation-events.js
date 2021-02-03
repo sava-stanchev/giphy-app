@@ -46,7 +46,6 @@ const renderHome = () => {
 };
 
 const renderTrending = async () => {
-
   const trendingGifs = await loadTrendingGifs();
   if (trendingGifs) {
     q(CONTAINER_SELECTOR).innerHTML = toTrendingView(trendingGifs.data);
@@ -59,7 +58,8 @@ const renderTrending = async () => {
 /**
  * @author Dimitar Stanoev
  * Renders single GIF details
- * @return {null} does not return a value
+ * @param {string} gifId to call loadSingleGif with
+ * @return {void}
  */
 export const renderGIFDetails = async (gifId = null) => {
   const singleGifDetails = await loadSingleGif(gifId);
@@ -70,7 +70,6 @@ export const renderGIFDetails = async (gifId = null) => {
     q(CONTAINER_SELECTOR).innerHTML = toErrorMessageView();
     showMessage('Something went wrong!');
   }
-  
 };
 
 const renderUploadPage = () => {

@@ -1,4 +1,4 @@
-import { toGiphySimple } from "./giphies-view.js";
+import { toGiphySimple } from './giphies-view.js';
 
 export const toFavoritesView = (gifs) => `
 <div id="GIFs">
