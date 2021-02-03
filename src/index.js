@@ -5,9 +5,7 @@ import { HOME, q } from './common/constants.js';
 import { handleUploadAttempt, showPreview, hidePreview } from './events/upload-events.js';
 
 document.addEventListener('DOMContentLoaded', () => {
-
-  document.addEventListener('click', e => {
-
+  document.addEventListener('click', (e) => {
     if (e.target.classList.contains('nav-link') ||
     e.target.classList.contains('navbar-brand')) {
       loadPage(e.target.getAttribute('data-page'));
@@ -45,7 +43,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  document.getElementById('btnSearch').addEventListener('click', e => {
+  document.getElementById('btnSearch').addEventListener('click', (e) => {
     e.preventDefault();
     const input = document.getElementById('search').value;
     renderSearchItems(input);

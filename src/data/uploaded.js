@@ -3,8 +3,8 @@ const uploaded = JSON.parse(localStorage.getItem('uploaded')) || [];
 /**
  * @author Dimitar Stanoev
  * Adds a GIF ID that is stored in an array on localStorage
- * @param {object} gif - an object that contains data about the gif
- * @return {null} does not return a value
+ * @param {object} response - an object that contains data about the gif
+ * @return {void}
  */
 export const addToUploadedGifs = (response) => {
   const uploadedGif = response.data.id;

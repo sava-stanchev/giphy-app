@@ -64,7 +64,8 @@ const renderTrending = async () => {
 /**
  * @author Dimitar Stanoev
  * Renders single GIF details
- * @return {null} does not return a value
+ * @param {string} gifId to call loadSingleGif with
+ * @return {void}
  */
 export const renderGIFDetails = async (gifId = null) => {
   const singleGifDetails = await loadSingleGif(gifId);
@@ -75,7 +76,6 @@ export const renderGIFDetails = async (gifId = null) => {
     q(CONTAINER_SELECTOR).innerHTML = toErrorMessageView();
     showMessage('Something went wrong!');
   }
-  
 };
 
 /**

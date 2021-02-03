@@ -32,7 +32,7 @@ export const toSingleGifView = (gif) => `
 /**
  * @author Dimitar Stanoev
  * Provides GIF details
- * @param {object} an object that contains the response data
+ * @param {object} gif object that contains the response data
  * @return {string} the HTML template, which includes detailed
  * information about the GIF
  */

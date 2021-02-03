@@ -12,7 +12,8 @@ export const toUploadedGifsView = (gifs) => `
   <h1>Uploaded GIFs:</h1>
   <div class="content">
     <div class="content-inner">
-      ${gifs.map(toGiphySimple).join('\n') || '<p class="uploaded-msg">Make an upload to see the GIF here</p>'}
+      ${gifs.map(toGiphySimple).join('\n') ||
+       '<p class="uploaded-msg">Make an upload to see the GIF here</p>'}
     </div>
   </div>
 </div>
