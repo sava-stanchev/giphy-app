@@ -68,9 +68,3 @@ export const loadFavoriteOrRandomGifs = async () => {
   
   return res.json();
 };
-
-export const loadRandomGif = async () => {
-  
-  
-  return res.json();
-}
