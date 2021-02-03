@@ -36,7 +36,7 @@ export const toSingleGifView = (gif) => `
  * @return {string} the HTML template, which includes detailed
  * information about the GIF
  */
-const toGifDetailed = (gif) => `
+export const toGifDetailed = (gif) => `
 <div class="gif-detailed">
   <div class="gif-image">
   ${renderFavoriteStatus(gif.id)} 

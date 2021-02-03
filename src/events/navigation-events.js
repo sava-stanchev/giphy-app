@@ -104,7 +104,7 @@ const renderFavorites = async () => {
   if (Array.isArray(favoriteGifs)) {
     q(CONTAINER_SELECTOR).innerHTML = toFavoritesView(favoriteGifs);
   } else {
-    q(CONTAINER_SELECTOR).innerHTML = toRandomView([favoriteGifs]);
+    q(CONTAINER_SELECTOR).innerHTML = toRandomView(favoriteGifs);
   }
 };
 
