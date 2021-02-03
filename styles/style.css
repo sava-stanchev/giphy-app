@@ -132,6 +132,18 @@ footer {
   max-width: 600px;
 }
 
+.gif-image > span {
+  position: absolute;
+    right: 75px;
+    top: 65px;
+    width: 20px;
+    height: 20px;
+    color: #ffeb00;
+    font-size: 20px;
+    line-height: 20px;
+    vertical-align: middle;
+    text-align: center;
+}
 .gif-info {
   display: flex;
 }
