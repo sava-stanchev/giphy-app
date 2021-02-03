@@ -62,10 +62,13 @@ const renderTrending = async () => {
  * @return {null} does not return a value
  */
 export const renderGIFDetails = async (gifId = null) => {
+  const singleGifDetails = await loadSingleGif(gifId);
 
-  if (loadSingleGif(gifId)) {
-    const singleGifDetails = await loadSingleGif(gifId);
+  if (singleGifDetails) {
     q(CONTAINER_SELECTOR).innerHTML = toSingleGifView(singleGifDetails.data);
+  } else {
+    q(CONTAINER_SELECTOR).innerHTML = toMessageView();
+    showMessage('Something went wrong!');
   }
   
 };
