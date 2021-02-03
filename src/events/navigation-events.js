@@ -40,38 +40,48 @@ export const loadPage = (page = '') => {
   }
 };
 
-export const renderHome = () => {
+const renderHome = () => {
   q(CONTAINER_SELECTOR).innerHTML = toHomeView();
 };
 
-export const renderTrending = async () => {
+const renderTrending = async () => {
   const trendingGifs = await loadTrendingGifs();
 
   q(CONTAINER_SELECTOR).innerHTML = toTrendingView(trendingGifs.data);
 };
 
+/**
+ * @author Dimitar Stanoev
+ * Renders single GIF details
+ * @return {null} does not return a value
+ */
 export const renderGIFDetails = async (gifId = null) => {
   const singleGifDetails = await loadSingleGif(gifId);
 
   q(CONTAINER_SELECTOR).innerHTML = toSingleGifView(singleGifDetails.data);
 };
 
-export const renderUploadPage = () => {
+const renderUploadPage = () => {
   q(CONTAINER_SELECTOR).innerHTML = toUploadView();
 };
 
+/**
+ * @author Dimitar Stanoev
+ * Renders uploaded GIFs
+ * @return {null} does not return a value
+ */
 export const renderUploaded = async () => {
   const uploadedGifs = await loadUploadedGifs();
 
   q(CONTAINER_SELECTOR).innerHTML = toUploadedGifsView(uploadedGifs.data);
 };
 
-export const renderFavorites = async () => {
+const renderFavorites = async () => {
   const favoriteGifs = await loadFavoriteGifs();
 
   q(CONTAINER_SELECTOR).innerHTML = toFavoritesView(favoriteGifs.data);
 };
 
-export const renderAbout = () => {
+const renderAbout = () => {
   q(CONTAINER_SELECTOR).innerHTML = toAboutView();
 };
