@@ -2,7 +2,7 @@ import { renderSearchItems } from './events/search-events.js';
 import { toggleFavoriteStatus } from './events/favorites-events.js';
 import { loadPage, renderGIFDetails } from './events/navigation-events.js';
 import { HOME, q } from './common/constants.js';
-import { renderCurrentUpload, showPreview, hidePreview } from './events/upload-events.js';
+import { handleUploadAttempt, showPreview, hidePreview } from './events/upload-events.js';
 
 document.addEventListener('DOMContentLoaded', () => {
 
@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     if (e.target.classList.contains('upload-btn')) {
-      renderCurrentUpload();
+      handleUploadAttempt();
     }
 
     if (q('.modal-open')) {

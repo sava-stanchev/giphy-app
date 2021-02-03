@@ -1,8 +1,7 @@
 /**
  * @author Delyana Yordanova
  * Provides the HTML template for the upload view
- * @return {string} the HTML template, in which the uploaded GIFs
- * are rendered
+ * @return {string} returns the HTML template of the view where to upload a file
  */
 export const toUploadView = () => `
 <h1>Upload your GIFs and Stickers</h1>
@@ -17,6 +16,7 @@ export const toUploadView = () => `
 /**
  * @author Delyana Yordanova
  * Provides the HTML template for the upload form
+ * @return {string} the HTML template of the form for uploading a file
  */
 export const uploadForm = `
 <form id="upload-form">
@@ -29,6 +29,10 @@ export const uploadForm = `
 </form>
 `;
 
+/**
+ * @author Delyana Yordanova
+ * Holds the HTML template for a message after upload attempt
+ */
 export const uploadMessage = `
   <div id="my-modal" class="modal">
     <div class="modal-content">

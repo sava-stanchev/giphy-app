@@ -31,7 +31,7 @@ export const loadPage = (page = '') => {
 
     case UPLOAD:
       setActiveNav(UPLOAD);
-      return renderUploadPage();
+      return renderUpload();
 
     case ABOUT:
       setActiveNav(ABOUT);
@@ -45,9 +45,14 @@ const renderHome = () => {
   q(CONTAINER_SELECTOR).innerHTML = toHomeView();
 };
 
+/**
+ * @author Delyana Yordanova
+ * Renders view with trending Gifs
+ * @return {void}
+ */
 const renderTrending = async () => {
-
   const trendingGifs = await loadTrendingGifs();
+
   if (trendingGifs) {
     q(CONTAINER_SELECTOR).innerHTML = toTrendingView(trendingGifs.data);
   } else {
@@ -73,7 +78,12 @@ export const renderGIFDetails = async (gifId = null) => {
   
 };
 
-const renderUploadPage = () => {
+/**
+ * @author Delyana Yordanova
+ * Renders view with form to upload a file
+ * @return {void}
+ */
+const renderUpload = () => {
   q(CONTAINER_SELECTOR).innerHTML = toUploadView();
 };
 

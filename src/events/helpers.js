@@ -21,6 +21,13 @@ export const renderFavoriteStatus = (gifId) => {
     :`<span class="favorite" data-gif-id="${gifId}">${EMPTY_HEART}</span>`;
 };
 
+/**
+ * @author Delyana Yordanova
+ * Checks if a file exists and if it is a valid type, or size,
+ * @param {object} file to validate
+ * @return {boolean} returns true if all statements evaluate to true and
+ * false if some of the statements evaluates to false
+ */
 export const isValidFile = (file) => {
   if (!file) {
     showMessage('Please select a file to upload!');
@@ -40,6 +47,12 @@ export const isValidFile = (file) => {
   return true;
 };
 
+/**
+ * @author Delyana Yordanova
+ * Shows message to the user
+ * @param {string} message to show
+ * @return {void}
+ */
 export const showMessage = (message) => {
   q('#message').innerHTML = message;
   q('#my-modal').classList.add('modal-open');
