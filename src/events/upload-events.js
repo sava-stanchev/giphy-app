@@ -6,12 +6,19 @@ import { isValidFile, showMessage } from './helpers.js';
 export const renderCurrentUpload = async () => {
   const file = document.forms['upload-form']['file-upload'].files[0];
 
-  if (!isValidFile(file)) return; // check file-type, file-size,
+  if (!isValidFile(file)) return;
 
   const formData = new FormData(q('#upload-form'));
   const uploadOutcome = await uploadGif(formData);
 
   handleUploadOutcome(uploadOutcome);
+};
+
+export const showPreview = () => {
+  const file = document.forms['upload-form']['file-upload'].files[0];
+  const src = URL.createObjectURL(file);
+  q('#img').src = src;
+  q('#preview').classList.add('visible');
 };
 
 export const handleUploadOutcome = (boolean) => {
@@ -26,5 +33,12 @@ export const handleUploadOutcome = (boolean) => {
   showMessage(message);
   q('#file-upload').value = '';
 };
+
+// export const showPreview = (e) => {
+//   const preview = q('#preview');
+//   const src = URL.createObjectURL(e.target.files[0]);
+//   preview.src = src;
+//   preview.classList.add('visible');
+// };
 
 

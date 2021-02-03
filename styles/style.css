@@ -154,7 +154,7 @@ footer {
 
 #container form {
   position: absolute;
-  top: 140px;
+  top: 130px;
   left: 50%;
   margin-top: -100px;
   margin-left: -250px;
@@ -182,14 +182,13 @@ footer {
   opacity: 0;
 }
 
-#container form button {
-  margin: 0;
+#container form .upload-btn {
   color: #fff;
   background: #ce2535;
   border: none;
   width: 508px;
   height: 35px;
-  margin-top: -20px;
+  line-height: 35px;
   margin-left: -4px;
   border-radius: 4px;
   transition: all .2s ease;
@@ -198,35 +197,49 @@ footer {
   font-size: 18px;
 }
 
-#container form button:hover {
+#container form .upload-btn:hover {
   background: #f4f313;
   color: #141619;
 }
 
-#container form button:active {
+#container form .upload-btn:active {
   border: 0;
 }
 
-/* UPLOAD Message */
+#upload-form img {
+  height: 190px;
+  margin: 5px auto;
+}
+
+#upload-form .preview {
+  display: none;
+  width: 500px;
+  height: 200px;
+  position: absolute;
+  top: -4px;
+  left: -4px;
+  background-color: #1c1c1c;
+}
+
+#upload-form .preview.visible {
+  display: inline-block
+}
+
+
+
+/* MESSAGE */
 
 /* The Modal (background) */
 .modal {
   display: none;
-  /* Hidden by default */
   position: fixed;
-  /* Stay in place */
   z-index: 1;
-  /* Sit on top */
   left: 0;
   top: 0;
   width: 100%;
-  /* Full width */
   height: 100%;
-  /* Full height */
   overflow: auto;
-  /* Enable scroll if needed */
   background-color: #000000c4;
-  /* Black w/ opacity */
 }
 
 .modal.modal-open {
@@ -238,7 +251,7 @@ footer {
   width: 500px !important;
   background-color: #000000;
   padding: 20px;
-  top: 330px;
+  top: 320px;
   left: 50%;
   margin-top: -100px;
   margin-left: -250px;
