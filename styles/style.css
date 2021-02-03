@@ -311,3 +311,8 @@ footer {
   margin-top: 20px;
 }
 
+.uploaded-msg {
+  position: absolute;
+  left: 300px;
+  color: grey;
+}

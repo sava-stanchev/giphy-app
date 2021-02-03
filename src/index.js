@@ -45,6 +45,7 @@ document.addEventListener('DOMContentLoaded', () => {
     e.preventDefault();
     const input = document.getElementById('search').value;
     renderSearchItems(input);
+    document.querySelector('#search').value = '';
   });
 
   loadPage(HOME);
