@@ -6,10 +6,22 @@
  */
 export const toAboutView = () => `
 <div id="about">
-    <div class="content">
-        <h1>About the app</h1>
-        <h2>Authors: Delyana Yordanova, Sava Stanchev, Dimitar Stanoev</h2>
-        <h2>Date: 02/02/2021</h2>
+  <h1>About Us</h1>
+  <div class="content">
+    <div class="content-inner">
+        <div class="author">
+          <img src="./images/profile_pic_Sava.png" alt="profile picture">
+          <p>Sava Stanchev</p>
+        </div>
+        <div class="author">
+          <img src="./images/profile_pic_Delyana.png" alt="profile picture">
+          <p>Delyana Yordanova</p>
+        </div>
+        <div class="author">
+          <img src="./images/profile_pic_Dimitar.png" alt="profile picture">
+          <p>Dimitar Stanoev</p>
+        </div>
     </div>
+  </div>
 </div>
 `;

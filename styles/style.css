@@ -284,7 +284,30 @@ footer {
   
 }
 
-#about > .content > h1 {
-  position: initial;
+/* About */
+#about .content {
+  margin: 0 auto;
+  top: 55px;
+  max-width: initial;
+  background-color: transparent;
+}
+
+#about .content-inner {
+  column-count: initial;
+  margin-top: 410px;
+}
+
+.author {
+  display: inline-block;
+  margin: 45px;
+}
+
+.author img {
+  width: 200px;
+}
+
+.author p {
+  font-size: 25px;
+  margin-top: 20px;
 }
 

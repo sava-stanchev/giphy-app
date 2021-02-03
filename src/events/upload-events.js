@@ -37,12 +37,3 @@ export const handleUploadOutcome = (boolean) => {
   showMessage(message);
   q('#file-upload').value = '';
 };
-
-// export const showPreview = (e) => {
-//   const preview = q('#preview');
-//   const src = URL.createObjectURL(e.target.files[0]);
-//   preview.src = src;
-//   preview.classList.add('visible');
-// };
-
-
