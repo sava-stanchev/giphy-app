@@ -7,6 +7,19 @@ body {
   background: url('../images/background.jpg');
   background-repeat: no-repeat;
   overflow: hidden;
+  overflow-y: scroll;
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+body::-webkit-scrollbar {
+  display: none;
+}
+/* Hide scrollbar for IE, Edge and Firefox */
+body {
+  -ms-overflow-style: none;
+  /* IE and Edge */
+  scrollbar-width: none;
+  /* Firefox */
 }
 
 footer {
@@ -41,23 +54,22 @@ footer {
   text-align: center;
 }
 
-.content-inner {
-  padding: 5px;
-  column-count: 4;
-  column-gap: 1px;
-}
-
 /* Hide scrollbar for Chrome, Safari and Opera */
 .content::-webkit-scrollbar {
   display: none;
 }
-
 /* Hide scrollbar for IE, Edge and Firefox */
 .content {
   -ms-overflow-style: none;
   /* IE and Edge */
   scrollbar-width: none;
   /* Firefox */
+}
+
+.content-inner {
+  padding: 5px;
+  column-count: 4;
+  column-gap: 1px;
 }
 
 
@@ -123,12 +135,13 @@ footer {
 }
 
 .single-gif-content {
-  padding-top: 50px;
+  padding-top: 10px;
   max-width: 600px;
   max-height: fit-content;
 }
 
 .gif-image {
+  position: relative;
   max-width: 500px;
   margin: 0 auto;
 }
@@ -139,8 +152,8 @@ footer {
 
 .gif-image > span {
   position: absolute;
-  right: 60px;
-  top: 55px;
+  right: 15px;
+  top: 10px;
   width: 60px;
   height: 60px;
   color: #ffeb00;
