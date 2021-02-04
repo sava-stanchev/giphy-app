@@ -38,7 +38,11 @@ document.addEventListener('DOMContentLoaded', () => {
       if (e.target.classList.contains('upload-file')) {
         document
             .getElementById('file-upload')
-            .addEventListener('input', () => showPreview());
+            .removeEventListener('input', showPreview);
+
+        document
+            .getElementById('file-upload')
+            .addEventListener('input', showPreview);
       }
     }
   });

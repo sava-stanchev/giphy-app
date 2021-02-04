@@ -4,7 +4,7 @@ import { toGiphySimple } from './giphies-view.js';
  * @author Delyana Yordanova
  * Provides HTML template for displaying trending GIFs
  * @param {object} gifs - an array of objects, containing data about each GIF
- * @return {string} the HTML template, in which the trending GIFs are rendered
+ * @return {string} returns the HTML template
  */
 export const toTrendingView = (gifs) => `
   <div id="GIFs">

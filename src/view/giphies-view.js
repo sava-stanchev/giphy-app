@@ -4,7 +4,7 @@ import { renderFavoriteStatus } from '../events/helpers.js';
  * @author Delyana Yordanova
  * Provides HTML template for a GIF to be displayed
  * @param {object} gif - an object that contains data about the GIF
- * @return {string} returns the HTML template, in which the GIF is rendered
+ * @return {string} returns the HTML template
  */
 export const toGiphySimple = (gif) => `
 <a href="#" class="giphy-simple" >
