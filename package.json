@@ -12,7 +12,8 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "fix": "eslint . --fix"
+    "fix": "eslint . --fix",
+    "doc": "jsdoc -r ./src/view ./src/requests ./src/events ./src/data"
   },
   "repository": {
     "type": "git",
