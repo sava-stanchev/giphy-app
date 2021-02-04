@@ -43,6 +43,13 @@ export const loadSingleGif = async (gifId) => {
   }
 };
 
+/**
+ * Sends a GET request to retrieve data by search query term.
+ * 
+ * @author Sava Stanchev
+ * @param {string} searchTerm - Text written in the input field.
+ * @returns {Promise} - Promise object containing the response data.
+ */
 export const loadSearchGifs = async (searchTerm = '') => {
   const res = await fetch(`${API_URL}/search?api_key=${API_KEY}&q=${searchTerm}&limit=30`);
 
@@ -85,6 +92,13 @@ export const loadUploadedGifs = async () => {
   return res.json();
 };
 
+/**
+ * Sends a GET request to either retrieve a random GIF or GIFs by ID 
+ * depending on whether there are any favorites in the local storage or not.
+ * 
+ * @author Sava Stanchev
+ * @returns {Promise} - Promise object containing the response data.
+ */
 export const loadFavoriteOrRandomGifs = async () => {
   let res;
   if (getFavorites().length === 0) {

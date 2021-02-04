@@ -108,6 +108,12 @@ export const renderUploaded = async () => {
   q(CONTAINER_SELECTOR).innerHTML = toUploadedGifsView(uploadedGifs.data);
 };
 
+/**
+ * Renders favorites or a random GIF.
+ * 
+ * @author Sava Stanchev
+ * @returns {void}
+ */
 const renderFavorites = async () => {
   let favoriteGifs = await loadFavoriteOrRandomGifs();
   favoriteGifs = favoriteGifs.data;
