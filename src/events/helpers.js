@@ -1,6 +1,13 @@
 import { EMPTY_HEART, FULL_HEART, q, qs } from '../common/constants.js';
 import { getFavorites } from '../data/favorites.js';
 
+/**
+ * Sets active or not to the navigaton menu.
+ * 
+ * @author Sava Stanchev
+ * @param {string} page - The page to be set.
+ * @return {void}
+ */
 export const setActiveNav = (page) => {
   const nav = qs('a.nav-link');
 
@@ -13,6 +20,14 @@ export const setActiveNav = (page) => {
       );
 };
 
+/**
+ * Shows whether a GIF is added to favorites or not.
+ * 
+ * @author Sava Stanchev
+ * @param {string} gifId - The ID of a GIF.
+ * @return {boolean} - A boolean indicating whether the GIF is
+ *                      in favorites or not.
+ */
 export const renderFavoriteStatus = (gifId) => {
   const favorites = getFavorites();
 

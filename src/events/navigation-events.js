@@ -26,6 +26,12 @@ import { toUploadedGifsView } from '../view/uploaded-view.js';
 import { toAboutView } from '../view/about-view.js';
 import { toErrorMessageView } from '../view/message-view.js';
 
+/**
+ * @author Dimitar Stanoev
+ * Loads a page following a click on one of navbar's tabs
+ * @param {string} page that represents the name of the tab
+ * @return {function} render function that displays the desired page
+ */
 export const loadPage = (page = '') => {
   switch (page) {
     case HOME:
@@ -56,6 +62,11 @@ export const loadPage = (page = '') => {
   }
 };
 
+/**
+ * @author Dimitar Stanoev
+ * Renders the home view
+ * @return {void}
+ */
 const renderHome = () => {
   q(CONTAINER_SELECTOR).innerHTML = toHomeView();
 };
@@ -138,6 +149,11 @@ const renderFavorites = async () => {
   }
 };
 
+/**
+ * @author Dimitar Stanoev
+ * Renders the about view
+ * @return {void}
+ */
 const renderAbout = () => {
   q(CONTAINER_SELECTOR).innerHTML = toAboutView();
 };
