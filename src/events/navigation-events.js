@@ -130,12 +130,12 @@ export const renderUploaded = async () => {
 
 /**
  * Renders favorites or a random GIF.
- * 
+ *
  * @author Sava Stanchev
- * @returns {void}
+ * @return {void}
  */
 const renderFavorites = async () => {
-  let favoriteGifs = await loadFavoriteOrRandomGifs();
+  const favoriteGifs = await loadFavoriteOrRandomGifs();
   if (favoriteGifs) {
     const { data } = favoriteGifs;
     if (Array.isArray(data)) {
@@ -150,8 +150,9 @@ const renderFavorites = async () => {
 };
 
 /**
- * @author Dimitar Stanoev
  * Renders the about view
+ *
+ * @author Dimitar Stanoev
  * @return {void}
  */
 const renderAbout = () => {

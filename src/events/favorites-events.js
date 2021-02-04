@@ -8,8 +8,9 @@ import { q } from '../common/constants.js';
 import { renderFavoriteStatus } from './helpers.js';
 
 /**
- * @author Dimitar Stanoev
  * Toggles the status of a GIF by filling or emptying a heart icon
+ *
+ * @author Dimitar Stanoev
  * @param {string} gifId the unique identificator of the GIF
  * @return {void}
  */

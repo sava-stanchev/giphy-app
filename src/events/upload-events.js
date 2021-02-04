@@ -3,10 +3,11 @@ import { uploadGif } from '../requests/request-service.js';
 import { isValidFile, showMessage } from './helpers.js';
 
 /**
- * @author Delyana Yordanova
  * Handles the attempt to upload and
  * calls a function to check the validity of the file before upload
  * and a function to handle the upload outcome
+ *
+ * @author Delyana Yordanova
  * @return {void}
  */
 export const handleUploadAttempt = async () => {
@@ -21,8 +22,9 @@ export const handleUploadAttempt = async () => {
 };
 
 /**
- * @author Delyana Yordanova
  * Handle the upload outcome and calls a function to show a message to the user
+ *
+ * @author Delyana Yordanova
  * @param {boolean} boolean parameter indicating success of failure
  * @return {void}
  */
@@ -40,8 +42,9 @@ export const handleUploadOutcome = (boolean) => {
 };
 
 /**
- * @author Delyana Yordanova
  * Previews the selected file before upload
+ *
+ * @author Delyana Yordanova
  * @return {void}
  */
 export const showPreview = () => {
@@ -52,8 +55,9 @@ export const showPreview = () => {
 };
 
 /**
- * @author Delyana Yordanova
  * Hides the preview of the file selected for upload
+ *
+ * @author Delyana Yordanova
  * @return {void}
  */
 export const hidePreview = () => {

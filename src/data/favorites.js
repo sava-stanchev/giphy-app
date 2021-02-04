@@ -2,7 +2,7 @@ let favorites = JSON.parse(localStorage.getItem('favorites')) || [];
 
 /**
  * Adds favorite GIFs to local storage.
- * 
+ *
  * @author Sava Stanchev
  * @param {string} gifId - The ID of a GIF.
  * @return {void}
@@ -18,7 +18,7 @@ export const addFavorite = (gifId) => {
 
 /**
  * Removes favorite GIFs from local storage.
- * 
+ *
  * @author Sava Stanchev
  * @param {string} gifId - The ID of a GIF.
  * @return {void}
@@ -30,7 +30,7 @@ export const removeFavorite = (gifId) => {
 
 /**
  * Gets favorite GIFs and places them into an array.
- * 
+ *
  * @author Sava Stanchev
  * @return {array} - An array that contains the IDs of favorite GIFs.
  */

@@ -3,8 +3,9 @@ import { getFavorites } from '../data/favorites.js';
 import { addToUploadedGifs, getUploaded } from '../data/uploaded.js';
 
 /**
- * @author Delyana Yordanova
  * Sends GET request to retrieve data using the trending endpoint
+ *
+ * @author Delyana Yordanova
  * @return {Promise} promise object containing the response data
  * in case of successful request or false in case of unsuccessful request
  */
@@ -23,11 +24,12 @@ export const loadTrendingGifs = async () => {
 };
 
 /**
- * @author Dimitar Stanoev
  * Sends GET request to retrieve data by GIF ID
+ *
+ * @author Dimitar Stanoev
  * @param {string} gifId that is added in the URL
  * @return {Promise|boolean} promise object containing the response data
- * or boolean indicating that has been an error
+ *                           or boolean indicating that has been an error
  */
 export const loadSingleGif = async (gifId) => {
   try {
@@ -50,7 +52,7 @@ export const loadSingleGif = async (gifId) => {
  * @author Sava Stanchev
  * @param {string} searchTerm - Text written in the input field.
  * @return {(Promise|boolean)} - Promise object containing the response data
- *                                or a boolean indicating failure.
+ *                               or a boolean indicating failure.
  */
 export const loadSearchGifs = async (searchTerm = '') => {
   try {
@@ -68,10 +70,11 @@ export const loadSearchGifs = async (searchTerm = '') => {
 };
 
 /**
- * @author Delyana Yordanova
  * Sends POST request to upload a file
+ *
+ * @author Delyana Yordanova
  * @param {object} formData object containing key/value pairs
- * representing form fields and their values
+ *                          representing form fields and their values
  * @return {boolean} boolean object indicating success or failure
  */
 export const uploadGif = async (formData) => {
@@ -93,10 +96,11 @@ export const uploadGif = async (formData) => {
 };
 
 /**
- * @author Dimitar Stanoev
  * Sends GET request to retrieve data by GIF IDs
+ *
+ * @author Dimitar Stanoev
  * @return {Promise|boolean} promise object containing the response data
- * or boolean indicating thare has been an error
+ *                           or boolean indicating there has been an error
  */
 export const loadUploadedGifs = async () => {
   try {
@@ -119,7 +123,7 @@ export const loadUploadedGifs = async () => {
  *
  * @author Sava Stanchev
  * @return {(Promise|boolean)} - Promise object containing the response data
- *                                or a boolean indicating failure.
+ *                               or a boolean indicating failure.
  */
 export const loadFavoriteOrRandomGifs = async () => {
   try {

@@ -1,6 +1,7 @@
 /**
- * @author Delyana Yordanova
  * Provides the HTML template for the upload view
+ *
+ * @author Delyana Yordanova
  * @return {string} returns the HTML template
  */
 export const toUploadView = () => `
@@ -14,8 +15,9 @@ export const toUploadView = () => `
 `;
 
 /**
- * @author Delyana Yordanova
  * Provides the HTML template for the upload form
+ *
+ * @author Delyana Yordanova
  * @return {string} returns the HTML template
  */
 export const uploadForm = () => `
@@ -36,8 +38,9 @@ export const uploadForm = () => `
 `;
 
 /**
- * @author Delyana Yordanova
  * Provides the HTML template for a message after upload attempt
+ *
+ * @author Delyana Yordanova
  * @return {string} returns the HTML template
  */
 export const uploadMessage = () => `

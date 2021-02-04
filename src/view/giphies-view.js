@@ -1,8 +1,9 @@
 import { renderFavoriteStatus } from '../events/helpers.js';
 
 /**
- * @author Delyana Yordanova
  * Provides HTML template for a GIF to be displayed
+ *
+ * @author Delyana Yordanova
  * @param {object} gif - an object that contains data about the GIF
  * @return {string} returns the HTML template
  */
@@ -10,14 +11,19 @@ export const toGiphySimple = (gif) => `
 <a href="#" class="giphy-simple" >
   <div class="wrapper">
     ${renderFavoriteStatus(gif.id)} 
-    <img class="giphy-image" data-gif-id=${gif.id} src=${gif.images.fixed_width.url}>
+    <img 
+      class="giphy-image"
+      data-gif-id=${gif.id}
+      src=${gif.images.fixed_width.url}
+    />
   </div>
 </a>
 `;
 
 /**
- * @author Dimitar Stanoev
  * Provides HTML template for a single GIF to be displayed
+ *
+ * @author Dimitar Stanoev
  * @param {object} gif - an object that contains data about the gif
  * @return {string} the HTML template, in which the GIF is rendered
  */
@@ -30,11 +36,12 @@ export const toSingleGifView = (gif) => `
 </div>`;
 
 /**
- * @author Dimitar Stanoev
  * Provides GIF details
+ *
+ * @author Dimitar Stanoev
  * @param {object} gif object that contains the response data
  * @return {string} the HTML template, which includes detailed
- * information about the GIF
+ *                  information about the GIF
  */
 export const toGifDetailed = (gif) => `
 <div class="gif-detailed">

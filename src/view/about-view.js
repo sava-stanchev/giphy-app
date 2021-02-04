@@ -1,6 +1,7 @@
 /**
- * @author Delyana Yordanova
  * Provides the HTML template for the about page
+ *
+ * @author Delyana Yordanova
  * @return {string} returns the HTML template
  */
 export const toAboutView = () => `

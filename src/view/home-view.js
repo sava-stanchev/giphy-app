@@ -1,6 +1,7 @@
 /**
- * @author Dimitar Stanoev
  * Provides the HTML template for the home page
+ *
+ * @author Dimitar Stanoev
  * @return {string} the HTML template that is rendered
  */
 export const toHomeView = () => `

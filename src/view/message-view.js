@@ -1,7 +1,8 @@
 /**
- * @author Delyana Yordanova
  * Provides the HTML template for a view with
  * a message to the user if an error occurs
+ *
+ * @author Delyana Yordanova
  * @return {string} returns the HTML template
  */
 export const toErrorMessageView = () => `
@@ -13,8 +14,9 @@ export const toErrorMessageView = () => `
 `;
 
 /**
- * @author Delyana Yordanova
  * Provides the HTML template for a message after an error occurs
+ *
+ * @author Delyana Yordanova
  * @return {string} returns the HTML template
  */
 export const errorMessage = () => `

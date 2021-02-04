@@ -3,7 +3,7 @@ import { getFavorites } from '../data/favorites.js';
 
 /**
  * Sets active or not to the navigaton menu.
- * 
+ *
  * @author Sava Stanchev
  * @param {string} page - The page to be set.
  * @return {void}
@@ -22,11 +22,11 @@ export const setActiveNav = (page) => {
 
 /**
  * Shows whether a GIF is added to favorites or not.
- * 
+ *
  * @author Sava Stanchev
  * @param {string} gifId - The ID of a GIF.
  * @return {boolean} - A boolean indicating whether the GIF is
- *                      in favorites or not.
+ *                     in favorites or not.
  */
 export const renderFavoriteStatus = (gifId) => {
   const favorites = getFavorites();
@@ -37,11 +37,12 @@ export const renderFavoriteStatus = (gifId) => {
 };
 
 /**
- * @author Delyana Yordanova
  * Checks if a file exists and if it is a valid type, or a valid size
+ *
+ * @author Delyana Yordanova
  * @param {object} file to validate
  * @return {boolean} returns true if all statements evaluate to true and
- * false if some statement evaluates to false
+ *                   false if some statement evaluates to false
  */
 export const isValidFile = (file) => {
   if (!file) {
@@ -63,8 +64,9 @@ export const isValidFile = (file) => {
 };
 
 /**
- * @author Delyana Yordanova
  * Shows message to the user
+ *
+ * @author Delyana Yordanova
  * @param {string} message to show
  * @return {void}
  */

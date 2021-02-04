@@ -1,8 +1,9 @@
 const uploaded = JSON.parse(localStorage.getItem('uploaded')) || [];
 
 /**
- * @author Dimitar Stanoev
  * Adds a GIF ID that is stored in an array on localStorage
+ *
+ * @author Dimitar Stanoev
  * @param {object} response - an object that contains data about the gif
  * @return {void}
  */
@@ -14,8 +15,9 @@ export const addToUploadedGifs = (response) => {
 };
 
 /**
- * @author Dimitar Stanoev
  * Gets uploaded gifs by ID
+ *
+ * @author Dimitar Stanoev
  * @return {array} array that contains the IDs of uploaded GIFs
  */
 export const getUploaded = () => [...uploaded];
