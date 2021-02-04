@@ -4,7 +4,9 @@ import { isValidFile, showMessage } from './helpers.js';
 
 /**
  * @author Delyana Yordanova
- * Handles the attempt to upload
+ * Handles the attempt to upload and
+ * calls a function to check the validity of the file before upload
+ * and a function to handle the upload outcome
  * @return {void}
  */
 export const handleUploadAttempt = async () => {
@@ -20,7 +22,26 @@ export const handleUploadAttempt = async () => {
 
 /**
  * @author Delyana Yordanova
- * Previews the selected  file before upload
+ * Handle the upload outcome and calls a function to show a message to the user
+ * @param {boolean} boolean parameter indicating success of failure
+ * @return {void}
+ */
+export const handleUploadOutcome = (boolean) => {
+  let message = '';
+
+  if (boolean) {
+    message = `Your GIF was successfully uploaded!`;
+  } else {
+    message = `Unsuccessful upload!`;
+  }
+
+  showMessage(message);
+  q('#file-upload').value = '';
+};
+
+/**
+ * @author Delyana Yordanova
+ * Previews the selected file before upload
  * @return {void}
  */
 export const showPreview = () => {
@@ -32,29 +53,10 @@ export const showPreview = () => {
 
 /**
  * @author Delyana Yordanova
- * Hides the preview of the selected for upload file
+ * Hides the preview of the file selected for upload
  * @return {void}
  */
 export const hidePreview = () => {
   q('#img').src = ' ';
   q('#preview').classList.remove('visible');
-};
-
-/**
- * @author Delyana Yordanova
- * Handle the upload outcome.
- * @param {boolean} boolean value
- * @return {void}
- */
-export const handleUploadOutcome = (boolean) => {
-  let message = '';
-
-  if (boolean) {
-    message = 'Your GIF was successfully uploaded!';
-  } else {
-    message = 'Unsuccessful upload!';
-  }
-
-  showMessage(message);
-  q('#file-upload').value = '';
 };

@@ -2,6 +2,12 @@ import { API_URL, API_KEY } from '../common/constants.js';
 import { getFavorites } from '../data/favorites.js';
 import { addToUploadedGifs, getUploaded } from '../data/uploaded.js';
 
+/**
+ * @author Delyana Yordanova
+ * Sends GET request to retrieve data using the trending endpoint
+ * @return {Promise} promise object containing the response data
+ * in case of successful request or false in case of unsuccessful request
+ */
 export const loadTrendingGifs = async () => {
   try {
     const res = await fetch(`${API_URL}/trending?api_key=${API_KEY}&limit=30&rating=g`);
@@ -43,6 +49,13 @@ export const loadSearchGifs = async (searchTerm = '') => {
   return res.json();
 };
 
+/**
+ * @author Delyana Yordanova
+ * Sends POST request to upload a file
+ * @param {object} formData object containing key/value pairs
+ * representing form fields and their values
+ * @return {boolean} boolean object indicating success or failure
+ */
 export const uploadGif = async (formData) => {
   try {
     const res = await fetch(`https://upload.giphy.com/v1/gifs?api_key=${API_KEY}`,

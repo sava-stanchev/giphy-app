@@ -2,10 +2,10 @@ import { EMPTY_HEART, FULL_HEART, q, qs } from '../common/constants.js';
 import { getFavorites } from '../data/favorites.js';
 
 export const setActiveNav = (page) => {
-  const navs = qs('a.nav-link');
+  const nav = qs('a.nav-link');
 
   Array
-      .from(navs)
+      .from(nav)
       .forEach((element) => element
           .getAttribute('data-page') === page ?
           element.classList.add('active') :
@@ -23,10 +23,10 @@ export const renderFavoriteStatus = (gifId) => {
 
 /**
  * @author Delyana Yordanova
- * Checks if a file exists and if it is a valid type, or size,
+ * Checks if a file exists and if it is a valid type, or a valid size
  * @param {object} file to validate
  * @return {boolean} returns true if all statements evaluate to true and
- * false if some of the statements evaluates to false
+ * false if some statement evaluates to false
  */
 export const isValidFile = (file) => {
   if (!file) {
@@ -35,12 +35,12 @@ export const isValidFile = (file) => {
   }
 
   if (file.size > 104857600) {
-    showMessage('Your file is larger than 100MB');
+    showMessage('Please select a file up to 100MB!');
     return false;
   }
 
   if (!file.type === 'image/gif' && !file.type === 'video/*') {
-    showMessage('Invalid file type');
+    showMessage('Please choose a .gif or a video file!');
     return false;
   }
 

@@ -47,7 +47,8 @@ const renderHome = () => {
 
 /**
  * @author Delyana Yordanova
- * Renders view with trending Gifs
+ * Renders view with trending Gifs and calls a function
+ * to show a message to the user in case of unsuccessful request
  * @return {void}
  */
 const renderTrending = async () => {
