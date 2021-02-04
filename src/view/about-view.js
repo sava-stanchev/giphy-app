@@ -1,8 +1,7 @@
 /**
  * @author Delyana Yordanova
  * Provides the HTML template for the about page
- * @return {string} the HTML template,
- * in which the about content is rendered
+ * @return {string} returns the HTML template
  */
 export const toAboutView = () => `
 <div id="about">

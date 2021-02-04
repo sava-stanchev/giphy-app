@@ -125,6 +125,7 @@ footer {
 .single-gif-content {
   padding-top: 50px;
   max-width: 600px;
+  max-height: fit-content;
 }
 
 .gif-image {
@@ -157,6 +158,7 @@ footer {
 
 .gif-info {
   display: flex;
+  padding-bottom: 10px;
 }
 
 .col {
@@ -216,7 +218,7 @@ footer {
   color: #fff;
   background: #ce2535;
   border: none;
-  width: 508px;
+  width: 500px;
   height: 35px;
   line-height: 35px;
   margin-left: -4px;
