@@ -48,7 +48,8 @@ export const loadSingleGif = async (gifId) => {
  * 
  * @author Sava Stanchev
  * @param {string} searchTerm - Text written in the input field.
- * @returns {boolean} - Boolean indicating success or failure.
+ * @returns {(Promise|boolean)} - Promise object containing the response data
+ *                                or a boolean indicating failure.
  */
 export const loadSearchGifs = async (searchTerm = '') => {
   try {
@@ -106,7 +107,8 @@ export const loadUploadedGifs = async () => {
  * depending on whether there are any favorites in the local storage or not.
  * 
  * @author Sava Stanchev
- * @returns {boolean} - Boolean indicating success or failure.
+ * @returns {(Promise|boolean)} - Promise object containing the response data 
+ *                                or a boolean indicating failure.
  */
 export const loadFavoriteOrRandomGifs = async () => {
   try {
