@@ -8,7 +8,14 @@ import {
   UPLOADED,
   ABOUT,
 } from '../common/constants.js';
-import { loadFavoriteOrRandomGifs, loadSingleGif, loadTrendingGifs, loadUploadedGifs } from '../requests/request-service.js';
+
+import {
+  loadFavoriteOrRandomGifs,
+  loadSingleGif,
+  loadTrendingGifs,
+  loadUploadedGifs,
+} from '../requests/request-service.js';
+
 import { toFavoritesView, toRandomView } from '../view/favorites-view.js';
 import { toSingleGifView } from '../view/giphies-view.js';
 import { toHomeView } from '../view/home-view.js';

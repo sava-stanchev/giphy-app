@@ -1,4 +1,9 @@
-import { addFavorite, removeFavorite, getFavorites } from '../data/favorites.js';
+import {
+  addFavorite,
+  removeFavorite,
+  getFavorites,
+} from '../data/favorites.js';
+
 import { q } from '../common/constants.js';
 import { renderFavoriteStatus } from './helpers.js';
 
