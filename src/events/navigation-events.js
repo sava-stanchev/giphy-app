@@ -107,11 +107,16 @@ export const renderUploaded = async () => {
  */
 const renderFavorites = async () => {
   let favoriteGifs = await loadFavoriteOrRandomGifs();
-  favoriteGifs = favoriteGifs.data;
-  if (Array.isArray(favoriteGifs)) {
-    q(CONTAINER_SELECTOR).innerHTML = toFavoritesView(favoriteGifs);
+  if (favoriteGifs) {
+    const { data } = favoriteGifs;
+    if (Array.isArray(data)) {
+      q(CONTAINER_SELECTOR).innerHTML = toFavoritesView(data);
+    } else {
+      q(CONTAINER_SELECTOR).innerHTML = toRandomView(data);
+    }
   } else {
-    q(CONTAINER_SELECTOR).innerHTML = toRandomView(favoriteGifs);
+    q(CONTAINER_SELECTOR).innerHTML = toErrorMessageView();
+    showMessage('Something went wrong!');
   }
 };
 

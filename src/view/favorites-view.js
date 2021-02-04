@@ -2,10 +2,10 @@ import { toGiphySimple, toGifDetailed } from './giphies-view.js';
 
 /**
  * Provides an HTML template for the favorite GIFs to be displayed in.
- * 
+ *
  * @author Sava Stanchev
  * @param {array} gifs - The GIFs to be displayed.
- * @return {string} - The HTML template, in which the GIFs are rendered. 
+ * @return {string} - The HTML template, in which the GIFs are rendered.
  */
 export const toFavoritesView = (gifs) => `
 <div id="GIFs">
@@ -20,10 +20,10 @@ export const toFavoritesView = (gifs) => `
 
 /**
  * Provides an HTML template for the random GIF to be displayed in.
- * 
+ *
  * @author Sava Stanchev
- * @param {array} gif - The GIF to be displayed.
- * @return {string} - The HTML template, in which the GIF is rendered. 
+ * @param {object} gif - The GIF to be displayed.
+ * @return {string} - The HTML template, in which the GIF is rendered.
  */
 export const toRandomView = (gif) => `
 <div id="single-gif">

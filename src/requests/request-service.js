@@ -48,12 +48,21 @@ export const loadSingleGif = async (gifId) => {
  * 
  * @author Sava Stanchev
  * @param {string} searchTerm - Text written in the input field.
- * @returns {Promise} - Promise object containing the response data.
+ * @returns {boolean} - Boolean indicating success or failure.
  */
 export const loadSearchGifs = async (searchTerm = '') => {
-  const res = await fetch(`${API_URL}/search?api_key=${API_KEY}&q=${searchTerm}&limit=30`);
+  try {
+    const res = await fetch(`${API_URL}/search?api_key=${API_KEY}&q=${searchTerm}&limit=30`);
+    if (!res.ok) {
+      throw new Error('Error');
+    }
 
-  return res.json();
+    return res.json();
+  } catch (err) {
+    console.log(err);
+
+    return false;
+  }
 };
 
 /**
@@ -97,15 +106,21 @@ export const loadUploadedGifs = async () => {
  * depending on whether there are any favorites in the local storage or not.
  * 
  * @author Sava Stanchev
- * @returns {Promise} - Promise object containing the response data.
+ * @returns {boolean} - Boolean indicating success or failure.
  */
 export const loadFavoriteOrRandomGifs = async () => {
-  let res;
-  if (getFavorites().length === 0) {
-    res = await fetch(`${API_URL}/random?api_key=${API_KEY}`);
-  } else {
-    res = await fetch(`${API_URL}?api_key=${API_KEY}&ids=${getFavorites().join(',')}`);
-  }
+  try {
+    const res = getFavorites().length === 0 ? 
+    await fetch(`${API_URL}/random?api_key=${API_KEY}`) : 
+    await fetch(`${API_URL}?api_key=${API_KEY}&ids=${getFavorites().join(',')}`);
+    if (!res.ok) {
+      throw new Error('Error');
+    }
 
-  return res.json();
+    return res.json();
+  } catch (err) {
+    console.log(err);
+
+    return false;
+  }
 };
