@@ -26,7 +26,8 @@ export const loadTrendingGifs = async () => {
  * @author Dimitar Stanoev
  * Sends GET request to retrieve data by GIF ID
  * @param {string} gifId that is added in the URL
- * @return {Promise} promise object containing the response data
+ * @return {Promise|boolean} promise object containing the response data
+ * or boolean indicating that has been an error
  */
 export const loadSingleGif = async (gifId) => {
   try {
@@ -45,10 +46,10 @@ export const loadSingleGif = async (gifId) => {
 
 /**
  * Sends a GET request to retrieve data by search query term.
- * 
+ *
  * @author Sava Stanchev
  * @param {string} searchTerm - Text written in the input field.
- * @returns {(Promise|boolean)} - Promise object containing the response data
+ * @return {(Promise|boolean)} - Promise object containing the response data
  *                                or a boolean indicating failure.
  */
 export const loadSearchGifs = async (searchTerm = '') => {
@@ -94,26 +95,36 @@ export const uploadGif = async (formData) => {
 /**
  * @author Dimitar Stanoev
  * Sends GET request to retrieve data by GIF IDs
- * @return {Promise} promise object containing the response data
+ * @return {Promise|boolean} promise object containing the response data
+ * or boolean indicating thare has been an error
  */
 export const loadUploadedGifs = async () => {
-  const res = await fetch(`${API_URL}?api_key=${API_KEY}&ids=${getUploaded().join(',')}`);
+  try {
+    const res = await fetch(`${API_URL}?api_key=${API_KEY}&ids=${getUploaded().join(',')}`);
 
-  return res.json();
+    if (!res.ok) {
+      throw new Error('Error');
+    }
+    return res.json();
+  } catch (err) {
+    console.log(err);
+
+    return false;
+  }
 };
 
 /**
- * Sends a GET request to either retrieve a random GIF or GIFs by ID 
+ * Sends a GET request to either retrieve a random GIF or GIFs by ID
  * depending on whether there are any favorites in the local storage or not.
- * 
+ *
  * @author Sava Stanchev
- * @returns {(Promise|boolean)} - Promise object containing the response data 
+ * @return {(Promise|boolean)} - Promise object containing the response data
  *                                or a boolean indicating failure.
  */
 export const loadFavoriteOrRandomGifs = async () => {
   try {
-    const res = getFavorites().length === 0 ? 
-    await fetch(`${API_URL}/random?api_key=${API_KEY}`) : 
+    const res = getFavorites().length === 0 ?
+    await fetch(`${API_URL}/random?api_key=${API_KEY}`) :
     await fetch(`${API_URL}?api_key=${API_KEY}&ids=${getFavorites().join(',')}`);
     if (!res.ok) {
       throw new Error('Error');

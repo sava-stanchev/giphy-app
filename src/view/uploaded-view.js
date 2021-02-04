@@ -9,7 +9,7 @@ import { toGiphySimple } from './giphies-view.js';
  */
 export const toUploadedGifsView = (gifs) => `
 <div id="uploaded-gifs">
-  <h1>Uploaded GIFs:</h1>
+  <h1>Uploaded GIFs</h1>
   <div class="content">
     <div class="content-inner">
       ${gifs.map(toGiphySimple).join('\n') ||

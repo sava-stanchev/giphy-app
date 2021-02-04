@@ -26,7 +26,6 @@ import { toUploadedGifsView } from '../view/uploaded-view.js';
 import { toAboutView } from '../view/about-view.js';
 import { toErrorMessageView } from '../view/message-view.js';
 
-
 export const loadPage = (page = '') => {
   switch (page) {
     case HOME:
@@ -85,10 +84,9 @@ const renderTrending = async () => {
  * @return {void}
  */
 export const renderGIFDetails = async (gifId = null) => {
-  const singleGifDetails = await loadSingleGif(gifId);
-
-  if (singleGifDetails) {
-    q(CONTAINER_SELECTOR).innerHTML = toSingleGifView(singleGifDetails.data);
+  const { data } = await loadSingleGif(gifId);
+  if (data) {
+    q(CONTAINER_SELECTOR).innerHTML = toSingleGifView(data);
   } else {
     q(CONTAINER_SELECTOR).innerHTML = toErrorMessageView();
     showMessage('Something went wrong!');
@@ -107,12 +105,16 @@ const renderUpload = () => {
 /**
  * @author Dimitar Stanoev
  * Renders uploaded GIFs
- * @return {null} does not return a value
+ * @return {void}
  */
 export const renderUploaded = async () => {
-  const uploadedGifs = await loadUploadedGifs();
-
-  q(CONTAINER_SELECTOR).innerHTML = toUploadedGifsView(uploadedGifs.data);
+  const { data } = await loadUploadedGifs();
+  if (data) {
+    q(CONTAINER_SELECTOR).innerHTML = toUploadedGifsView(data);
+  } else {
+    q(CONTAINER_SELECTOR).innerHTML = toErrorMessageView();
+    showMessage('Something went wrong!');
+  }
 };
 
 /**
