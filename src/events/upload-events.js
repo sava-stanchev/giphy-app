@@ -10,13 +10,12 @@ import { isValidFile, showMessage } from './helpers.js';
  * @author Delyana Yordanova
  * @return {void}
  */
-export const handleUploadAttempt = async () => {
+export const handleUploadAttempt = () => {
   const file = document.forms['upload-form']['file-upload'].files[0];
-
   if (!isValidFile(file)) return;
 
   const formData = new FormData(q('#upload-form'));
-  const uploadOutcome = await uploadGif(formData);
+  const uploadOutcome = uploadGif(formData);
 
   handleUploadOutcome(uploadOutcome);
 };
