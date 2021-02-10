@@ -16,7 +16,6 @@ export const handleUploadAttempt = async () => {
 
   const formData = new FormData(q('#upload-form'));
   const uploadOutcome = await uploadGif(formData);
-  // console.log(uploadOutcome);
 
   handleUploadOutcome(uploadOutcome);
 };

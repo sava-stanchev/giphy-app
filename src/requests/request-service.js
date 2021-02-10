@@ -75,7 +75,8 @@ export const loadSearchGifs = async (searchTerm = '') => {
  * @author Delyana Yordanova
  * @param {object} formData object containing key/value pairs
  *                          representing form fields and their values
- * @return {boolean} boolean object indicating success or failure
+ * @return {Promise} promise object containing a boolean
+ *                   indicating success or failure
  */
 export const uploadGif = async (formData) => {
   try {
