@@ -47,16 +47,22 @@ export const renderFavoriteStatus = (gifId) => {
 export const isValidFile = (file) => {
   if (!file) {
     showMessage('Please select a file to upload!');
+    q('#file-upload').value = '';
+
     return false;
   }
 
   if (file.size > 104857600) {
     showMessage('Please select a file up to 100MB!');
+    q('#file-upload').value = '';
+
     return false;
   }
 
-  if (!file.type === 'image/gif' && !file.type === 'video/*') {
+  if (!(file.type === 'image/gif') && !(file.type === 'video/*')) {
     showMessage('Please choose a .gif or a video file!');
+    q('#file-upload').value = '';
+
     return false;
   }
 
