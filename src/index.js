@@ -1,57 +1,58 @@
-import { renderSearchItems } from './events/search-events.js';
-import { toggleFavoriteStatus } from './events/favorites-events.js';
-import { loadPage, renderGIFDetails } from './events/navigation-events.js';
-import { HOME, q } from './common/constants.js';
-import { handleUploadAttempt, showPreview, hidePreview } from './events/upload-events.js';
+import { renderSearchItems } from "./events/search-events.js";
+import { toggleFavoriteStatus } from "./events/favorites-events.js";
+import { loadPage, renderGIFDetails } from "./events/navigation-events.js";
+import { HOME } from "./common/constants.js";
+import {
+  handleUploadAttempt,
+  showPreview,
+  hidePreview,
+} from "./events/upload-events.js";
 
-document.addEventListener('DOMContentLoaded', () => {
-  document.addEventListener('click', (e) => {
-    if (e.target.classList.contains('nav-link') ||
-    e.target.classList.contains('navbar-brand')) {
-      loadPage(e.target.getAttribute('data-page'));
+$(() => {
+  $(document).click((e) => {
+    if (
+      $(e.target).hasClass("nav-link") ||
+      $(e.target).hasClass("navbar-brand")
+    ) {
+      loadPage($(e.target).attr("data-page"));
     }
 
-    if (e.target.classList.contains('giphy-image')) {
-      renderGIFDetails(e.target.getAttribute('data-gif-id'));
+    if ($(e.target).hasClass("giphy-image")) {
+      renderGIFDetails($(e.target).attr("data-gif-id"));
     }
 
-    if (e.target.classList.contains('favorite')) {
-      toggleFavoriteStatus(e.target.getAttribute('data-gif-id'));
+    if ($(e.target).hasClass("favorite")) {
+      toggleFavoriteStatus($(e.target).attr("data-gif-id"));
     }
 
-    if (e.target.classList.contains('upload-btn')) {
+    if ($(e.target).hasClass("upload-btn")) {
       handleUploadAttempt();
     }
 
-    if (q('.modal-open')) {
-      if (e.target.classList.contains('close-upload-message')) {
-        q('#my-modal').classList.remove('modal-open');
+    if ($("modal-open")) {
+      if ($(e.target).hasClass("close-upload-message")) {
+        $("#my-modal").removeClass("modal-open");
         hidePreview();
       }
-      if (e.target.classList.contains('close-error-message')) {
-        q('#my-modal').classList.remove('modal-open');
+      if ($(e.target).hasClass("close-error-message")) {
+        $("#my-modal").removeClass("modal-open");
         loadPage(HOME);
       }
     }
 
-    if (q('#file-upload')) {
-      if (e.target.classList.contains('upload-file')) {
-        document
-            .getElementById('file-upload')
-            .removeEventListener('input', showPreview);
-
-        document
-            .getElementById('file-upload')
-            .addEventListener('input', showPreview);
+    if ($("#file-upload")) {
+      if ($(e.target).hasClass("upload-file")) {
+        $("#file-upload").off("input", showPreview);
+        $("#file-upload").on("input", showPreview);
       }
     }
   });
 
-  document.getElementById('btnSearch').addEventListener('click', (e) => {
+  $("#btnSearch").click((e) => {
     e.preventDefault();
-    const input = document.getElementById('search').value;
+    const input = $("#search")[0].value;
     renderSearchItems(input);
-    document.querySelector('#search').value = '';
+    $("#search")[0].value = "";
   });
 
   loadPage(HOME);
